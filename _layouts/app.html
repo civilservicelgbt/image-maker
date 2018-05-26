@@ -1,0 +1,110 @@
+---
+layout: default
+---
+
+<main id="{{ page.layout }}">
+	
+	<div id="page-title">		
+		<h1 class="page-title">{{ page.title }}</h1>
+	</div>
+	
+	<div id="page-lead-paragraph">
+		<p>{{ page.excerpt }}</p>
+	</div>
+	
+	<div id="page-content">
+		
+		<div id="social-input">
+		
+			<div id="social-input--image-size">
+			
+				<h2>Image size</h2>
+
+				<ul id="image-size">
+		
+					<li><input type="radio" name="image-size" id="size-twitter" value="twitter" checked><span class="radio"></span><label for="size-twitter">Twitter</label></li>
+		
+					<li><input type="radio" name="image-size" id="size-facebook" value="facebook"><span class="radio"></span><label for="size-facebook">Facebook</label></li>
+		
+					<li><input type="radio" name="image-size" id="size-instagram" value="instagram"><span class="radio"></span><label for="size-instagram">Instagram</label></li>
+		
+				</ul>
+
+			</div>
+
+			<div id="social-input--image-style">
+			
+				<h2>Image style</h2>
+
+				<ul id="image-style">
+		
+					<li><input type="radio" name="image-style" id="style-squares" value="squares" checked><span class="radio"></span><label for="style-squares">Squares</label></li>
+		
+					<li><input type="radio" name="image-style" id="style-circles" value="circles"><span class="radio"></span><label for="style-circles">Circles</label></li>
+					
+					<li><input type="radio" name="image-style" id="style-bubbles" value="bubbles"><span class="radio"></span><label for="style-bubbles">Bubbles</label></li>
+					
+					<li><input type="radio" name="image-style" id="style-squiggles" value="squiggles"><span class="radio"></span><label for="style-squiggles">Squiggles</label></li>
+		
+				</ul>
+
+			</div>
+		
+			<div id="social-input--text">
+			
+				<h2>Text to display</h2>
+				
+				<input type="text" class="formMainText" id="formMainText1" placeholder="Put some text in these boxes."></input>
+				<input type="text" class="formMainText" id="formMainText2" placeholder="Each row you add will automatically align itself."></input>
+				<input type="text" class="formMainText" id="formMainText3" placeholder="Text doesn't wrap, so use the next row if"></input>
+				<input type="text" class="formMainText" id="formMainText4" placeholder="there is too much text to display on one line."></input>
+				<input type="text" class="formMainText" id="formMainText5" placeholder="There's a maximum of 5 rows!"></input>
+			
+			</div>
+			
+			<div id="social-input--image-style">
+			
+				<h2>Footer</h2>
+
+				<ul id="footer-style">
+		
+					<li><input type="radio" name="footer-style" id="footer-on" value="on" checked><span class="radio"></span><label for="footer-on">On</label></li>
+		
+					<li><input type="radio" name="footer-style" id="footer-off" value="off"><span class="radio"></span><label for="footer-off">Off</label></li>
+		
+				</ul>
+
+			</div>
+			
+			<div id="social-input--alignment-correction">
+			
+				<h2>Alignment corrections</h2>
+				
+				<h3>Vertical alignment</h3>
+				<p>Positive numbers move up, negative numbers move down</p>
+				<input type="text" id="heightCorrection" placeholder="0"></input>
+				
+				<h3>Horizontal alignment</h3>
+				<p>Positive numbers move left, negative numbers move right</p>
+				<input type="text" id="widthCorrection" placeholder="0"></input>			
+			</div>
+
+		</div>
+		
+		<div id="social-output">
+			
+			<img id="canvas-img" alt="Right click to save me!">
+			
+			<p>Right click or long press the image above to save.</p>
+		
+		</div>
+		
+		
+		
+	</div>
+	
+</main>
+
+<canvas id="canvas" style="display: none;"></canvas>
+
+<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: '/assets/scripts/social.js' }}"></script>

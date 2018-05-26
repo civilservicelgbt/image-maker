@@ -1,1 +1,1 @@
-# image-maker
+# Civil Service LGBT+ Network Social Media Image Maker

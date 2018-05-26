@@ -1,0 +1,114 @@
+// Header styles
+
+nav#site-navigation {
+	
+	display: block;
+	position: relative;
+	
+	z-index: 				1000000;
+
+	padding: 		0 0 15px 0;
+	margin: 			0;
+
+					
+	div#menu {
+			
+		background: 				$black;
+		@include					header-shadow(3);
+	
+		padding: 		0 15px;
+		margin: 0;
+		
+		&::after {
+		    content: "";
+		    clear: both;
+		    display: table;
+		}
+
+	}
+	
+	span.site-title {
+		
+		display: block;
+		height: 55px;
+
+		float: left;
+		clear: left;
+		
+		@include md-up {
+			width: 33%;
+		}
+		
+		box-sizing: border-box;
+		margin: 0;
+		
+		line-height: 	55px;
+		vertical-align: middle;
+		
+		a {
+			display: inline-block;
+						
+			transition: 			all 0.5s ease;
+						
+			color: $white;
+			font-size: $font-size-base;
+			@include md-up {
+				font-size: $font-size-base + 4px;
+			}
+			font-weight: bold;
+			
+			text-decoration: none;
+			
+			&:hover,
+			&:focus {
+				transition: 			all 0.5s ease;
+				text-decoration: underline;
+				-webkit-text-decoration-color: $white;
+						text-decoration-color: $white;
+			}
+		}
+	}
+	
+	span.service-title {
+		display: block;
+		height: 55px;
+
+		float: left;
+		clear: none;
+		
+		@include md-up {
+			width: auto;
+		}
+		
+		box-sizing: border-box;
+		margin: 0;
+		
+		line-height: 	55px;
+		vertical-align: middle;
+		
+		a {
+			display: inline-block;
+						
+			transition: 			all 0.5s ease;
+						
+			color: $white;
+			font-size: $font-size-base;
+			@include md-up {
+				font-size: $font-size-base + 4px;
+			}
+			font-weight: bold;
+			
+			text-decoration: none;
+			
+			&:hover,
+			&:focus {
+				transition: 			all 0.5s ease;
+				text-decoration: underline;
+				-webkit-text-decoration-color: $white;
+						text-decoration-color: $white;
+			}
+		}
+
+	}
+
+}

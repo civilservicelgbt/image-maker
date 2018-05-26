@@ -1,0 +1,125 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+#####################################################
+#####################################################
+#####											#####
+#####			BASIC INFORMATION 				#####
+#####											#####
+#####################################################
+#####################################################
+
+title: "Image Maker"
+short-title: "Civil Service LGBT+" # For use in the header
+author: "Civil Service LGBT+ Network"
+description: "The Civil Service LGBT+ network represents the interests of the 20,000 people working in the UK Civil Service with minority sexual orientations and gender identities."
+
+email: info@civilservice.lgbt
+
+#####################################################
+#####################################################
+#####											#####
+#####			CUSTOMISABLE VALUES 				#####
+#####											#####
+#####################################################
+#####################################################
+
+# HEADER
+
+# To customise the navigation bar, edit 'menu.csv' in the '_data' folder
+
+# FOOTER
+
+created-by:			"John Peart"
+created-by-website:	"http://www.johnpe.art"
+copyright-notice:	"All content is released under the <a href='https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/' title='Read more about the Open Government License. (Opens in new window)' target='_blank'>Open Government License</a> unless otherwise stated. Please attribute our work."
+
+# To customise the other links in the footer, edit 'membership.csv' and 'disclaimer.csv' in the '_data' folder.
+
+# DEFAULT IMAGES
+
+# These images appear on social media and in web browsers.
+# The 'Pinned Colour' is for Safari Pinned Tabs and Windows 10 Start Menu, it will define the background colour for the site in those menus.
+
+social-media-image: "/assets/images/site/social-media.png"
+touch: "/assets/images/site/touch.png"
+pinned: "/assets/images/site/pinned.svg"
+pinned-colour: "#2f3590"
+logo-favicon-small: "/assets/images/site/favicon-16x16.png"
+logo-favicon-medium: "/assets/images/site/favicon-32x32.png"
+logo-favicon-large: "/assets/images/site/favicon-96x96.png"
+
+#####################################################
+#####################################################
+#####											#####
+#####		SOCIAL MEDIA + ANALYTICS INFO		#####
+#####											#####
+#####################################################
+#####################################################
+
+# Note - updating these values will update various links across the site.
+# If you don't want a certain website to appear, either:
+# -- delete the line starting 'website-url:'
+# -- put a '#' symbol in front of the link starting 'website-url:'
+
+facebook-app-id: "..." # For Facebook OpenGraph integration
+facebook-profile-id: "..." # For Facebook OpenGraph integration
+facebook-admin-id: "..." # For Facebook OpenGraph integration
+facebook-url:	"https://facebook.com/civilservicelgbt"
+facebook-handle: "civilservicelgbt" # Automatically pre-pends http://facebook.com/
+
+twitter-url: "https://twitter.com/cslgbt" # Twitter handle i.e. joebloggs
+twitter-handle: "cslgbt" # Twitter handle i.e. joebloggs
+
+flickr-url:  "https://www.flickr.com/photos/civilservicelgbt/"
+flickr-handle:  "civilservicelgbt"
+
+instagram-url:  "https://www.instagram.com/civilservicelgbt"
+instagram-handle:  "civilservicelgbt"
+
+github-url:  "https://github.com/civilservicelgbt"
+github-handle:  "civilservicelgbt"
+
+# Adding this info will enable analytics on your site.
+
+# Google settings
+google-site-verification: "RA-YBjxyRYVSuSFAYLKkufs6gjme6kMcihoB2KgKrTA"
+google-analytics: "UA-47423042-2" # GA ID code
+
+#####################################################
+#####################################################
+#####											#####
+#####			SITE + BUILD INFO				#####
+#####											#####
+#####################################################
+#####################################################
+
+url: "https://www.civilservice.lgbt" # e.g. http://example.com
+baseurl: "/image-maker" # e.g. /blog
+
+markdown: kramdown
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
