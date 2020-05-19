@@ -16,6 +16,17 @@
 
 #####################################################
 #####################################################
+######## IMPORTANT:
+######## Set the 'setup' value below to 'false'
+######## in order to skip the set up splash
+######## screen/
+#####################################################
+#####################################################
+
+setup: true
+
+#####################################################
+#####################################################
 #####											#####
 #####			BASIC INFORMATION 				#####
 #####											#####
@@ -31,9 +42,9 @@ email: info@civilservice.lgbt
 
 #####################################################
 #####################################################
-#####											#####
-#####			CUSTOMISABLE VALUES 				#####
-#####											#####
+#####										                      	#####
+#####			CUSTOMISABLE VALUES 			          	#####
+#####										                      	#####
 #####################################################
 #####################################################
 
@@ -49,24 +60,22 @@ copyright-notice:	"All content is released under the <a href='https://www.nation
 
 # To customise the other links in the footer, edit 'membership.csv' and 'disclaimer.csv' in the '_data' folder.
 
-# DEFAULT IMAGES
-
-# These images appear on social media and in web browsers.
-# The 'Pinned Colour' is for Safari Pinned Tabs and Windows 10 Start Menu, it will define the background colour for the site in those menus.
+# DEFAULT IMAGES, COLOUR AND FAVICONS
 
 social-media-image: "/assets/images/site/social-media.png"
-touch: "/assets/images/site/touch.png"
-pinned: "/assets/images/site/pinned.svg"
-pinned-colour: "#2f3590"
-logo-favicon-small: "/assets/images/site/favicon-16x16.png"
-logo-favicon-medium: "/assets/images/site/favicon-32x32.png"
-logo-favicon-large: "/assets/images/site/favicon-96x96.png"
+
+theme-colour: "#2f3590"
+
+favicon: "/favicon.ico"
+favicon-svg: "/assets/images/site/favicon.svg"
+favicon-pinned-svg: "/assets/images/site/favicon.svg"
+favicon-large-png: "/assets/images/site/favicon-large-png.png"
 
 #####################################################
 #####################################################
-#####											#####
+#####								            #####
 #####		SOCIAL MEDIA + ANALYTICS INFO		#####
-#####											#####
+#####										    #####
 #####################################################
 #####################################################
 
@@ -75,13 +84,10 @@ logo-favicon-large: "/assets/images/site/favicon-96x96.png"
 # -- delete the line starting 'website-url:'
 # -- put a '#' symbol in front of the link starting 'website-url:'
 
-facebook-app-id: "..." # For Facebook OpenGraph integration
-facebook-profile-id: "..." # For Facebook OpenGraph integration
-facebook-admin-id: "..." # For Facebook OpenGraph integration
 facebook-url:	"https://facebook.com/civilservicelgbt"
 facebook-handle: "civilservicelgbt" # Automatically pre-pends http://facebook.com/
 
-twitter-url: "https://twitter.com/cslgbt" # Twitter handle i.e. joebloggs
+twitter-url: "https://twitter.com/cslgbt" # Twitter URL i.e. joebloggs
 twitter-handle: "cslgbt" # Twitter handle i.e. joebloggs
 
 flickr-url:  "https://www.flickr.com/photos/civilservicelgbt/"
@@ -98,6 +104,7 @@ github-handle:  "civilservicelgbt"
 # Google settings
 google-site-verification: "RA-YBjxyRYVSuSFAYLKkufs6gjme6kMcihoB2KgKrTA"
 google-analytics: "UA-47423042-2" # GA ID code
+google-analytics-domain: ".www.civilservice.lgbt"
 
 #####################################################
 #####################################################
@@ -110,16 +117,11 @@ google-analytics: "UA-47423042-2" # GA ID code
 url: "https://www.civilservice.lgbt" # e.g. http://example.com
 baseurl: "/image-maker" # e.g. /blog
 
+permalink: pretty
 markdown: kramdown
+future: false
+highlighter: rouge
+sass:
+    sass_dir: _sass
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+remote_theme: civilservicelgbt/cslgbt-theme
