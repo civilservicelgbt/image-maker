@@ -197,7 +197,7 @@ function getFormFields(imageSize = true, imageStyles = true, footerStyle = true,
 	if (mainText == true) {
 		formFields.mainText = document.getElementById("mainText").value;
 		if (formFields.mainText == "") {
-			formFields.mainText = "Enter your own***text to create***your image.******Use three *s to create***a line break";
+			formFields.mainText = "Enter your own text.***Use three *s to create a line break.";
 		} else {
 			formFields.mainText = document.getElementById("mainText").value;
 		}
@@ -243,9 +243,9 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 	// This function sets the variables needed for each design.
 
 	var imageStyles = {}
-	if (formImageStyles == "squares") {
+	if (formImageStyles == "pride-on-top-left") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 48, 42, 48, 42);
+		var fontSize = setFontSize(formImageSize, 48, 32, 44, 28, 56, 42, 56, 48);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
@@ -257,89 +257,20 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		imageStyles.footerBaseline = "bottom";
 		imageStyles.footerAlign = "left";
 		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
+		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 45, 250, 45, 250, 60, 400, 70, 700);
 		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
-		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
-		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
-		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
-		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "circles") {
-		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 32, 56, 42);
-		imageStyles.mainFontSize = fontSize.main;
-		imageStyles.footerFontSize = fontSize.footer;
-		// Check text area size
-		textHeight = 0
-		var mainTextMultiline = formMainText.split("***");
-		for (var i = 0; i < mainTextMultiline.length; i++) {
-			textHeight += (imageStyles.mainFontSize * 1.2);
-		}
-		// Text colours
-		imageStyles.mainColor = "#FFFFFF";
-		imageStyles.footerColor = "#000000";
-		// Text align
-		imageStyles.mainBaseline = "top";
-		imageStyles.mainAlign = "center";
-		imageStyles.footerBaseline = "bottom";
-		imageStyles.footerAlign = "left";
-		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 600, (675 / 2) - (textHeight / 2), 600, (675 / 2) - (textHeight / 2), 540, (1080 / 2) - (textHeight / 2), 540, (1920 / 2) - (textHeight / 2));
-		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
-		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 25, 650, 25, 605, 25, 1055, 25, 1895);
-		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
-		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 2, 2, 2, 1);
-		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "bubbles") {
-		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 48, 42, 48, 42);
-		imageStyles.mainFontSize = fontSize.main;
-		imageStyles.footerFontSize = fontSize.footer;
-		// Text colours
-		imageStyles.mainColor = "#000000";
-		imageStyles.footerColor = "#000000";
-		// Text align
-		imageStyles.mainBaseline = "top";
-		imageStyles.mainAlign = "left";
-		imageStyles.footerBaseline = "bottom";
-		imageStyles.footerAlign = "left";
-		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
-		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
-		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
+		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 45, 630, 45, 595, 60, 1020, 70, 1850);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
 		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 2);
 		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "curves") {
+	} else if (formImageStyles == "pride-on-bottom-right") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 48, 42, 48, 42);
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 48);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
-		imageStyles.mainColor = "#000000";
-		imageStyles.footerColor = "#000000";
-		// Text align
-		imageStyles.mainBaseline = "top";
-		imageStyles.mainAlign = "left";
-		imageStyles.footerBaseline = "bottom";
-		imageStyles.footerAlign = "left";
-		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
-		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
-		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
-		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
-		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
-		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "clouds") {
-		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 48, 42, 48, 42);
-		imageStyles.mainFontSize = fontSize.main;
-		imageStyles.footerFontSize = fontSize.footer;
-		// Text colours
-		imageStyles.mainColor = "#000000";
+		imageStyles.mainColor = "#FFFFFF";
 		imageStyles.footerColor = "#FFFFFF";
 		// Text align
 		imageStyles.mainBaseline = "top";
@@ -347,105 +278,21 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		imageStyles.footerBaseline = "bottom";
 		imageStyles.footerAlign = "left";
 		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
+		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 45, 250, 45, 250, 60, 400, 70, 700);
 		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
-		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 625, 100, 580, 125, 1025, 125, 1850);
-		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
-		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
-		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "waves") {
-		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 42, 32, 36, 28, 48, 42, 48, 42);
-		imageStyles.mainFontSize = fontSize.main;
-		imageStyles.footerFontSize = fontSize.footer;
-		// Text colours
-		imageStyles.mainColor = "#000000";
-		imageStyles.footerColor = "#000000";
-		// Text align
-		imageStyles.mainBaseline = "top";
-		imageStyles.mainAlign = "left";
-		imageStyles.footerBaseline = "top";
-		imageStyles.footerAlign = "left";
-		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 50, 200, 50, 200, 50, 250, 100, 500);
-		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
-		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 50, 100, 50, 100, 50, 100, 100, 150);
+		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 45, 640, 45, 600, 60, 200, 70, 200);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
 		var footerRows = setFooterRows(formImageSize, 2, 2, 2, 2);
 		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "arrows") {
+	} else if (formImageStyles == "pride-on-arrows") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 48);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
 		imageStyles.mainColor = "#FFFFFF";
 		imageStyles.footerColor = "#FFFFFF";
-		// Text align
-		imageStyles.mainBaseline = "top";
-		imageStyles.mainAlign = "left";
-		imageStyles.footerBaseline = "bottom";
-		imageStyles.footerAlign = "left";
-		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
-		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
-		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
-		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
-		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 1, 1, 2, 2);
-		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "magenta") {
-		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
-		imageStyles.mainFontSize = fontSize.main;
-		imageStyles.footerFontSize = fontSize.footer;
-		// Text colours
-		imageStyles.mainColor = "#FFFFFF";
-		imageStyles.footerColor = "#FFFFFF";
-		// Text align
-		imageStyles.mainBaseline = "top";
-		imageStyles.mainAlign = "left";
-		imageStyles.footerBaseline = "bottom";
-		imageStyles.footerAlign = "left";
-		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
-		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
-		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
-		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
-		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 1, 1, 2, 2);
-		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "cyan") {
-		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
-		imageStyles.mainFontSize = fontSize.main;
-		imageStyles.footerFontSize = fontSize.footer;
-		// Text colours
-		imageStyles.mainColor = "#FFFFFF";
-		imageStyles.footerColor = "#FFFFFF";
-		// Text align
-		imageStyles.mainBaseline = "top";
-		imageStyles.mainAlign = "left";
-		imageStyles.footerBaseline = "bottom";
-		imageStyles.footerAlign = "left";
-		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
-		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
-		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
-		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
-		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 1, 1, 2, 2);
-		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "yellow") {
-		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
-		imageStyles.mainFontSize = fontSize.main;
-		imageStyles.footerFontSize = fontSize.footer;
-		// Text colours
-		imageStyles.mainColor = "#000000";
-		imageStyles.footerColor = "#000000";
 		// Text align
 		imageStyles.mainBaseline = "top";
 		imageStyles.mainAlign = "left";
