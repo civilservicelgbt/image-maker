@@ -24,7 +24,7 @@ onload: "setUp()"
 				<ul id="image-size">
 		
 					<li class="radio-input">
-						<input type="radio" name="image-size" id="size-twitter" value="twitter" checked>
+						<input type="radio" onchange="updateImage();" name="image-size" id="size-twitter" value="twitter" checked>
 						<span class="radio"></span>
 						<label for="size-twitter">
 							<span class="label-first-line">Twitter timeline</span>
@@ -33,7 +33,7 @@ onload: "setUp()"
 					</li>
 		
 					<li class="radio-input">
-						<input type="radio" name="image-size" id="size-facebook" value="facebook">
+						<input type="radio" onchange="updateImage();" name="image-size" id="size-facebook" value="facebook">
 						<span class="radio"></span>
 						<label for="size-facebook">
 							<span class="label-first-line">Facebook timeline</span>
@@ -42,7 +42,7 @@ onload: "setUp()"
 					</li>
 		
 					<li class="radio-input">
-						<input type="radio" name="image-size" id="size-instagram-grid" value="instagram-grid">
+						<input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-grid" value="instagram-grid">
 						<span class="radio"></span>
 						<label for="size-instagram-grid">
 							<span class="label-first-line">Instagram Grid</span>
@@ -51,7 +51,7 @@ onload: "setUp()"
 					</li>
 		
 					<li class="radio-input">
-						<input type="radio" name="image-size" id="size-instagram-stories" value="instagram-stories">
+						<input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-stories" value="instagram-stories">
 						<span class="radio"></span>
 						<label for="size-instagram-stories">
 							<span class="label-first-line">Instagram Stories</span>
@@ -69,19 +69,19 @@ onload: "setUp()"
 
 				<ul id="image-design">
 		
-					<li class="radio-input"><input type="radio" name="image-design" id="style-squares" value="squares" checked><span class="radio"></span><label for="style-squares">Squares</label></li>
+					<li class="radio-input"><input type="radio" onchange="updateImage();" name="image-design" id="style-squares" value="squares" checked><span class="radio"></span><label for="style-squares">Squares</label></li>
 		
-					<li class="radio-input"><input type="radio" name="image-design" id="style-circles" value="circles"><span class="radio"></span><label for="style-circles">Circles</label></li>
+					<li class="radio-input"><input type="radio" onchange="updateImage();" name="image-design" id="style-circles" value="circles"><span class="radio"></span><label for="style-circles">Circles</label></li>
 					
-					<li class="radio-input"><input type="radio" name="image-design" id="style-bubbles" value="bubbles"><span class="radio"></span><label for="style-bubbles">Bubbles</label></li>
+					<li class="radio-input"><input type="radio" onchange="updateImage();" name="image-design" id="style-bubbles" value="bubbles"><span class="radio"></span><label for="style-bubbles">Bubbles</label></li>
 					
-					<li class="radio-input"><input type="radio" name="image-design" id="style-curves" value="curves"><span class="radio"></span><label for="style-curves">Curves</label></li>
+					<li class="radio-input"><input type="radio" onchange="updateImage();" name="image-design" id="style-curves" value="curves"><span class="radio"></span><label for="style-curves">Curves</label></li>
 					
-					<li class="radio-input"><input type="radio" name="image-design" id="style-clouds" value="clouds"><span class="radio"></span><label for="style-clouds">Clouds</label></li>
+					<li class="radio-input"><input type="radio" onchange="updateImage();" name="image-design" id="style-clouds" value="clouds"><span class="radio"></span><label for="style-clouds">Clouds</label></li>
 					
-					<li class="radio-input"><input type="radio" name="image-design" id="style-waves" value="waves"><span class="radio"></span><label for="style-waves">Waves</label></li>
+					<li class="radio-input"><input type="radio" onchange="updateImage();" name="image-design" id="style-waves" value="waves"><span class="radio"></span><label for="style-waves">Waves</label></li>
 					
-					<li class="radio-input"><input type="radio" name="image-design" id="style-pride-on-arrows" value="pride-on-arrows"><span class="radio"></span><label for="style-pride-on-arrows">Pride On arrows</label></li>
+					<li class="radio-input"><input type="radio" onchange="updateImage();" name="image-design" id="style-pride-on-arrows" value="pride-on-arrows"><span class="radio"></span><label for="style-pride-on-arrows">Pride On arrows</label></li>
 
 				</ul>
 
@@ -91,7 +91,7 @@ onload: "setUp()"
 			
 				<h2>Text to display</h2>
 				
-				<textarea class="mainText" id="mainText" placeholder="Enter your text to display here." cols="30" rows="5"></textarea>
+				<textarea onfocusout="updateImage();" class="mainText" id="mainText" placeholder="Enter your text to display here." cols="30" rows="5"></textarea>
 
 				<p class="hint">Your text will not automatically wrap to the image dimensons.</p><p class="hint"> You can manually add a line break by inserting three asterisks in a row like this: <code>***</code>.</p>
 			
@@ -103,9 +103,9 @@ onload: "setUp()"
 
 				<ul id="footer-style">
 		
-					<li class="radio-input"><input type="radio" name="footer-style" id="footer-on" value="on" checked><span class="radio"></span><label for="footer-on">On</label></li>
+					<li class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-on" value="on" checked><span class="radio"></span><label for="footer-on">On</label></li>
 		
-					<li class="radio-input"><input type="radio" name="footer-style" id="footer-off" value="off"><span class="radio"></span><label for="footer-off">Off</label></li>
+					<li class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-off" value="off"><span class="radio"></span><label for="footer-off">Off</label></li>
 		
 				</ul>
 
