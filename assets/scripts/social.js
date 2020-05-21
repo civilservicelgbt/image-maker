@@ -396,6 +396,69 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		// How many rows for the footer text?
 		var footerRows = setFooterRows(formImageSize, 1, 1, 2, 2);
 		imageStyles.footerRows = footerRows.count;
+	} else if (formImageStyles == "magenta") {
+		// Text font sizes
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
+		// Text colours
+		imageStyles.mainColor = "#FFFFFF";
+		imageStyles.footerColor = "#FFFFFF";
+		// Text align
+		imageStyles.mainBaseline = "top";
+		imageStyles.mainAlign = "left";
+		imageStyles.footerBaseline = "bottom";
+		imageStyles.footerAlign = "left";
+		// Text (x,y) positions
+		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
+		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
+		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
+		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
+		// How many rows for the footer text?
+		var footerRows = setFooterRows(formImageSize, 1, 1, 2, 2);
+		imageStyles.footerRows = footerRows.count;
+	} else if (formImageStyles == "cyan") {
+		// Text font sizes
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
+		// Text colours
+		imageStyles.mainColor = "#FFFFFF";
+		imageStyles.footerColor = "#FFFFFF";
+		// Text align
+		imageStyles.mainBaseline = "top";
+		imageStyles.mainAlign = "left";
+		imageStyles.footerBaseline = "bottom";
+		imageStyles.footerAlign = "left";
+		// Text (x,y) positions
+		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
+		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
+		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
+		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
+		// How many rows for the footer text?
+		var footerRows = setFooterRows(formImageSize, 1, 1, 2, 2);
+		imageStyles.footerRows = footerRows.count;
+	} else if (formImageStyles == "yellow") {
+		// Text font sizes
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
+		// Text colours
+		imageStyles.mainColor = "#000000";
+		imageStyles.footerColor = "#000000";
+		// Text align
+		imageStyles.mainBaseline = "top";
+		imageStyles.mainAlign = "left";
+		imageStyles.footerBaseline = "bottom";
+		imageStyles.footerAlign = "left";
+		// Text (x,y) positions
+		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 100, 100, 100, 100, 125, 125, 125, 250);
+		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
+		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
+		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
+		// How many rows for the footer text?
+		var footerRows = setFooterRows(formImageSize, 1, 1, 2, 2);
+		imageStyles.footerRows = footerRows.count;
 	}
 
 	return imageStyles;
