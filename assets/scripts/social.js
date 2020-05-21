@@ -375,8 +375,6 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		// How many rows for the footer text?
 		var footerRows = setFooterRows(formImageSize, 2, 2, 2, 2);
 		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "pride-on-plain") {
-		
 	} else if (formImageStyles == "pride-on-arrows") {
 		// Text font sizes
 		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
@@ -404,7 +402,7 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 	
 }
 
-function drawRestOfImage(ctx, formFields, imageSize, imageStyles) {
+function drawRestOfImage(ctx, formFields, imageStyles) {
 	
 	// Form main text, set text baseline
 	ctx.textBaseline=imageStyles.mainBaseline;
@@ -478,7 +476,7 @@ function generateImage(formFields, imageSize, imageStyles) {
 
 		// -------------------------------------------- //
 		// DRAW FOREGROUND
-		drawRestOfImage(ctx, formFields, imageSize, imageStyles);
+		drawRestOfImage(ctx, formFields, imageStyles);
 
 		// save canvas image as data url (png format by default)
 		var dataURL = canvas.toDataURL('image/png');
@@ -499,4 +497,6 @@ outputDownload.addEventListener('click', function (e) {
     var dataURL = canvas.toDataURL('image/png');
     outputDownload.href = dataURL;
 });
+
+
 
