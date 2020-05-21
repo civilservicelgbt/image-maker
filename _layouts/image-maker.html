@@ -122,7 +122,7 @@ onload: "setUp()"
 						<label for="mainTextXPosition">
 							<span class="label-first-line">Text <em>x</em> position</span>
 						</label>
-						<input id="mainTextXPosition" name="text-position-x" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+						<input onfocusout="updateImage();" id="mainTextXPosition" name="text-position-x" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
 
 						<p class="hint"><code>0</code> is the left edge. Positive values only.</p>
 					</li>
@@ -130,7 +130,7 @@ onload: "setUp()"
 						<label for="mainTextXPosition">
 							<span class="label-first-line">Text <em>y</em> position</span>
 						</label>						
-						<input id="mainTextYPosition" name="text-position-y" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+						<input onfocusout="updateImage();" id="mainTextYPosition" name="text-position-y" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
 						<p class="hint"><code>0</code> is the top edge. Positive values only.</p>
 					</li>
 				</ul> 
