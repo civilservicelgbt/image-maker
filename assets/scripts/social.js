@@ -375,7 +375,7 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		// How many rows for the footer text?
 		var footerRows = setFooterRows(formImageSize, 2, 2, 2, 2);
 		imageStyles.footerRows = footerRows.count;
-	} else if (formImageStyles == "pride-on-arrows") {
+	} else if (formImageStyles == "arrows") {
 		// Text font sizes
 		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
 		imageStyles.mainFontSize = fontSize.main;
