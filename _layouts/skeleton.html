@@ -1,0 +1,20 @@
+<html lang="en">
+	
+	{% include head.html %}
+
+    <body onload="{{ layout.onload }}" class="{{ page.layout }}{% if page.preview == true %} preview{% endif %}">
+		
+		<div class="wrapper">
+		
+		{% if site.setup == true %}
+		{% include skiplink.html %}
+		{{ content }}
+		{% else %}
+		{% include error/set-up.html %}
+		{% endif %}
+		
+		</div>
+		
+	</body>
+	
+</html>

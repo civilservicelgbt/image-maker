@@ -1,5 +1,6 @@
 ---
 layout: default
+onload: "setUp()"
 ---
 
 <main id="{{ page.layout }}">
@@ -26,7 +27,8 @@ layout: default
 						<input type="radio" name="image-size" id="size-twitter" value="twitter" checked>
 						<span class="radio"></span>
 						<label for="size-twitter">
-							Twitter timeline
+							<span class="label-first-line">Twitter timeline</span>
+							<span class="label-second-line">1200px by 675px</span>
 						</label>
 					</li>
 		
@@ -34,15 +36,17 @@ layout: default
 						<input type="radio" name="image-size" id="size-facebook" value="facebook">
 						<span class="radio"></span>
 						<label for="size-facebook">
-							Facebook timeline
+							<span class="label-first-line">Facebook timeline</span>
+							<span class="label-second-line">1200px by 630px</span>
 						</label>
 					</li>
 		
 					<li class="radio-input">
-						<input type="radio" name="image-size" id="size-instagram-grid" value="instagram">
+						<input type="radio" name="image-size" id="size-instagram-grid" value="instagram-grid">
 						<span class="radio"></span>
 						<label for="size-instagram-grid">
-							Instagram Grid
+							<span class="label-first-line">Instagram Grid</span>
+							<span class="label-second-line">1080px by 1080px</span>
 						</label>
 					</li>
 		
@@ -50,7 +54,8 @@ layout: default
 						<input type="radio" name="image-size" id="size-instagram-stories" value="instagram-stories">
 						<span class="radio"></span>
 						<label for="size-instagram-stories">
-							Instagram Stories
+							<span class="label-first-line">Instagram Stories</span>
+							<span class="label-second-line">1080px by 1920px</span>
 						</label>
 					</li>
 		
@@ -58,20 +63,26 @@ layout: default
 
 			</div>
 
-			<div id="social-input--image-style">
+			<div id="social-input--image-design">
 			
 				<h2>Design</h2>
 
-				<ul id="image-style">
+				<ul id="image-design">
 		
-					<li class="radio-input"><input type="radio" name="image-style" id="style-squares" value="squares" checked><span class="radio"></span><label for="style-squares">Squares</label></li>
+					<li class="radio-input"><input type="radio" name="image-design" id="style-squares" value="squares" checked><span class="radio"></span><label for="style-squares">Squares</label></li>
 		
-					<li class="radio-input"><input type="radio" name="image-style" id="style-circles" value="circles"><span class="radio"></span><label for="style-circles">Circles</label></li>
+					<li class="radio-input"><input type="radio" name="image-design" id="style-circles" value="circles"><span class="radio"></span><label for="style-circles">Circles</label></li>
 					
-					<li class="radio-input"><input type="radio" name="image-style" id="style-bubbles" value="bubbles"><span class="radio"></span><label for="style-bubbles">Bubbles</label></li>
+					<li class="radio-input"><input type="radio" name="image-design" id="style-bubbles" value="bubbles"><span class="radio"></span><label for="style-bubbles">Bubbles</label></li>
 					
-					<li class="radio-input"><input type="radio" name="image-style" id="style-squiggles" value="squiggles"><span class="radio"></span><label for="style-squiggles">Squiggles</label></li>
-		
+					<li class="radio-input"><input type="radio" name="image-design" id="style-curves" value="curves"><span class="radio"></span><label for="style-curves">Curves</label></li>
+					
+					<li class="radio-input"><input type="radio" name="image-design" id="style-clouds" value="clouds"><span class="radio"></span><label for="style-clouds">Clouds</label></li>
+					
+					<li class="radio-input"><input type="radio" name="image-design" id="style-waves" value="waves"><span class="radio"></span><label for="style-waves">Waves</label></li>
+					
+					<li class="radio-input"><input type="radio" name="image-design" id="style-pride-on-arrows" value="pride-on-arrows"><span class="radio"></span><label for="style-pride-on-arrows">Pride On arrows</label></li>
+
 				</ul>
 
 			</div>
@@ -80,15 +91,13 @@ layout: default
 			
 				<h2>Text to display</h2>
 				
-				<input type="text" class="formMainText" id="formMainText1" placeholder="Put some text in these boxes."></input>
-				<input type="text" class="formMainText" id="formMainText2" placeholder="Each row you add will automatically align itself."></input>
-				<input type="text" class="formMainText" id="formMainText3" placeholder="Text doesn't wrap, so use the next row if"></input>
-				<input type="text" class="formMainText" id="formMainText4" placeholder="there is too much text to display on one line."></input>
-				<input type="text" class="formMainText" id="formMainText5" placeholder="There's a maximum of 5 rows!"></input>
+				<textarea class="mainText" id="mainText" placeholder="Enter your text to display here." cols="30" rows="5"></textarea>
+
+				<p class="hint">Your text will not automatically wrap to the image dimensons.</p><p class="hint"> You can manually add a line break by inserting three asterisks in a row like this: <code>***</code>.</p>
 			
 			</div>
 			
-			<div id="social-input--image-style">
+			<div id="social-input--footer-style">
 			
 				<h2>Footer</h2>
 
@@ -102,17 +111,28 @@ layout: default
 
 			</div>
 			
-			<div id="social-input--alignment-correction">
+			<div id="social-input--text-position">
 			
-				<h2>Alignment corrections</h2>
+				<h2>Text position</h2>
 				
-				<h3>Vertical alignment</h3>
-				<p>Positive numbers move up, negative numbers move down</p>
-				<input type="text" id="heightCorrection" placeholder="0"></input>
-				
-				<h3>Horizontal alignment</h3>
-				<p>Positive numbers move left, negative numbers move right</p>
-				<input type="text" id="widthCorrection" placeholder="0"></input>			
+				<p>If you need to adjust the horizontal position of the text, adjust this value.</p>
+				<p>These values are absolute values, rather than relative to the text's current position.</p>
+				<ul id="text-position">
+					<li class="number-input">
+						<label for="mainTextXPosition">
+							<span class="label-first-line">Text <em>x</em> position</span>
+						</label>
+						<input id="mainTextXPosition" name="text-position-x" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+
+						<p class="hint"><code>0</code> is the left edge. Positive values only.</p>
+					</li>
+					<li class="number-input">
+						<label for="mainTextYPosition">Text <i>y</i> position</label>
+						<input id="mainTextYPosition" name="text-position-y" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+						<p class="hint"><code>0</code> is the top edge. Positive values only.</p>
+					</li>
+				</ul> 
+							
 			</div>
 
 		</div>
@@ -120,8 +140,9 @@ layout: default
 		<div id="social-output">
 			
 			<img id="canvas-img" alt="Right click to save me!">
-			
-			<p>Right click or long press the image above to save.</p>
+
+			<button onclick="updateImage()">Update image</button>
+			<a href="#" class="button" id="output-download" download>Download image</a>
 		
 		</div>
 		
@@ -133,5 +154,4 @@ layout: default
 
 <canvas id="canvas" style="display: none;"></canvas>
 
-<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: '/assets/scripts/jquery.js' }}"></script>
 <script type="text/javascript" src="{{ site.url | append: site.baseurl | append: '/assets/scripts/social.js' }}"></script>
