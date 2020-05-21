@@ -447,7 +447,7 @@ function drawRestOfImage(ctx, formFields, imageSize, imageStyles) {
 
 }
 
-async function generateImage(formFields, imageSize, imageStyles) {
+function generateImage(formFields, imageSize, imageStyles) {
 
 	// -------------------------------------------- //
 	// GENERATE IMAGE
