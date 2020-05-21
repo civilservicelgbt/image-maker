@@ -404,7 +404,50 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 	
 }
 
-function generateImage(formFields, imageSize, imageStyles) {
+function drawRestOfImage(ctx, formFields, imageSize, imageStyles) {
+	
+	// Form main text, set text baseline
+	ctx.textBaseline=imageStyles.mainBaseline;
+	ctx.textAlign=imageStyles.mainAlign;
+	ctx.font = "normal " + imageStyles.mainFontSize +  "px " + canvasFontFace;
+	ctx.fillStyle = imageStyles.mainColor;
+
+	console.log("Successfully set text styles...");
+
+	var mainTextMultiline = formFields.mainText.split("***");
+	var startTextX = imageStyles.mainXY[0];
+	var startTextY = imageStyles.mainXY[1];
+	for (var i = 0; i < mainTextMultiline.length; i++) {
+		ctx.fillText(mainTextMultiline[i], startTextX, startTextY);
+		startTextY += (imageStyles.mainFontSize * 1.2);
+	}
+
+	console.log("Successfully printed text...");
+
+	if (formFields.footerStyle == "on") {
+		// Form footer text, set text baseline
+		ctx.fillStyle = imageStyles.footerColor;
+		ctx.textBaseline=imageStyles.footerBaseline;
+		ctx.textAlign=imageStyles.footerAlign;
+		ctx.font = "bold " + imageStyles.footerFontSize +  "px " + canvasFontFace;
+	
+		if (imageStyles.footerRows == 1) {
+			ctx.fillText("Civil Service LGBT+ Network", imageStyles.footerXY[0], imageStyles.footerXY[1]);
+		} else if (imageStyles.footerRows == 2) {
+			if (imageStyles.footerBaseline = "bottom") {
+			ctx.fillText("Civil Service", imageStyles.footerXY[0], imageStyles.footerXY[1] - (imageStyles.footerFontSize * 1.2));
+			ctx.fillText("LGBT+ Network", imageStyles.footerXY[0], imageStyles.footerXY[1]);
+			} else if (imageStyles.footerBaseline = "top") {
+				ctx.fillText("Civil Service", imageStyles.footerXY[0], imageStyles.footerXY[1]);
+				ctx.fillText("LGBT+ Network", imageStyles.footerXY[0], imageStyles.footerXY[1] + (imageStyles.footerFontSize * 1.2));
+			}
+		}
+		console.log("Successfully printed the footer...");
+	}
+
+}
+
+async function generateImage(formFields, imageSize, imageStyles) {
 
 	// -------------------------------------------- //
 	// GENERATE IMAGE
@@ -419,65 +462,34 @@ function generateImage(formFields, imageSize, imageStyles) {
 	canvas.style.height = imageSize.height + "px";
 
 	var ctx = canvas.getContext('2d');
-	
+
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
+	ctx.fillStyle = '#ffffff';
+	ctx.rect(0, 0, canvas.width, canvas.height);
 
-	var background = new Image();
-	background.src = "assets/images/app/" + formFields.imageSize + "/" + formFields.imageDesign + ".png";
+	var imageObj = new Image();
+	imageObj.src = "assets/images/app/" + formFields.imageSize + "/" + formFields.imageDesign + ".png";
 
-	background.onload = function () {
-		ctx.fillStyle = '#ffffff';
-	   	ctx.drawImage(background,0,0,imageSize.width,imageSize.height);
-		console.log("Successfully drawn background: " + background.src);
-
-		// Form main text, set text baseline
-		ctx.textBaseline=imageStyles.mainBaseline;
-		ctx.textAlign=imageStyles.mainAlign;
-		ctx.font = "normal " + imageStyles.mainFontSize +  "px " + canvasFontFace;
-		ctx.fillStyle = imageStyles.mainColor;
-
-		console.log("Successfully set text styles...");
-
-		var mainTextMultiline = formFields.mainText.split("***");
-		var startTextX = imageStyles.mainXY[0];
-		var startTextY = imageStyles.mainXY[1];
-		for (var i = 0; i < mainTextMultiline.length; i++) {
-			ctx.fillText(mainTextMultiline[i], startTextX, startTextY);
-			startTextY += (imageStyles.mainFontSize * 1.2);
-		}
-
-		console.log("Successfully printed text...");
-
-		if (formFields.footerStyle == "on") {
-			// Form footer text, set text baseline
-			ctx.fillStyle = imageStyles.footerColor;
-			ctx.textBaseline=imageStyles.footerBaseline;
-			ctx.textAlign=imageStyles.footerAlign;
-			ctx.font = "bold " + imageStyles.footerFontSize +  "px " + canvasFontFace;
+	imageObj.onload = function() {
 		
-			if (imageStyles.footerRows == 1) {
-				ctx.fillText("Civil Service LGBT+ Network", imageStyles.footerXY[0], imageStyles.footerXY[1]);
-			} else if (imageStyles.footerRows == 2) {
-				if (imageStyles.footerBaseline = "bottom") {
-				ctx.fillText("Civil Service", imageStyles.footerXY[0], imageStyles.footerXY[1] - (imageStyles.footerFontSize * 1.2));
-				ctx.fillText("LGBT+ Network", imageStyles.footerXY[0], imageStyles.footerXY[1]);
-				} else if (imageStyles.footerBaseline = "top") {
-					ctx.fillText("Civil Service", imageStyles.footerXY[0], imageStyles.footerXY[1]);
-					ctx.fillText("LGBT+ Network", imageStyles.footerXY[0], imageStyles.footerXY[1] + (imageStyles.footerFontSize * 1.2));
-				}
-			}
-			console.log("Successfully printed the footer...");
-		}
+		// -------------------------------------------- //
+		// DRAW BACKGROUND
+		ctx.drawImage(imageObj, 0, 0, canvas.width, canvas.height);
+
+		// -------------------------------------------- //
+		// DRAW FOREGROUND
+		drawRestOfImage(ctx, formFields, imageSize, imageStyles);
 
 		// save canvas image as data url (png format by default)
 		var dataURL = canvas.toDataURL('image/png');
-
+	
 		// set canvasImg image src to dataURL
 		// so it can be saved as an image
 		previewImage = document.getElementById('canvas-img');
 		previewImage.src = dataURL;
-
+	
 		console.log("Done!");
+	
 	}
 
 }
