@@ -1,6 +1,7 @@
 // Page styles
 
-main#image-maker {
+main#image-maker,
+main#pride-on {
 
     @supports (display: grid) {
 		display: 					grid;
