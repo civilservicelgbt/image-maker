@@ -41,6 +41,8 @@ function updateImage() {
 	var imageStyles = setimageStyles(formFields.imageSize, formFields.imageDesign, formFields.mainText);
 	console.log( "Main font size: " + imageStyles.mainFontSize + "px. Footer font size: " + imageStyles.footerFontSize + "px. Main text colour: " + imageStyles.mainColor + ". Footer text colour: " + imageStyles.footerColor + ". Main (x,y): " + imageStyles.mainXY[0] + "px, " + imageStyles.mainXY[1] + "px. Footer (x,y): " + imageStyles.footerXY[0] + "px, " + imageStyles.footerXY[1] + "px. Footer rows: " + imageStyles.footerRows);
 
+	setXYCoordinates(imageStyles.mainXY[0], imageStyles.mainXY[1]);
+
 	generateImage(formFields, imageSize, imageStyles);
 
 }
