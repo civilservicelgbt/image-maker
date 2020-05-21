@@ -5,8 +5,8 @@
 // -------------------------------------------- //
 // GLOBAL VALUES
 
-var canvasFontFace = "'prideon', Helvetica, Arial";
-
+var canvasSansSerifFontFace = "Helvetica, Arial";
+var canvasScriptFontFace = "'PrideOn', Helvetica";
 function setUp() {
 
 	// -------------------------------------------- //
@@ -317,7 +317,7 @@ function drawRestOfImage(ctx, formFields, imageStyles) {
 	// Form main text, set text baseline
 	ctx.textBaseline=imageStyles.mainBaseline;
 	ctx.textAlign=imageStyles.mainAlign;
-	ctx.font = "normal " + imageStyles.mainFontSize +  "px " + canvasFontFace;
+	ctx.font = "normal " + imageStyles.mainFontSize +  "px " + canvasScriptFontFace;
 	ctx.fillStyle = imageStyles.mainColor;
 
 	console.log("Successfully set text styles...");
@@ -337,7 +337,7 @@ function drawRestOfImage(ctx, formFields, imageStyles) {
 		ctx.fillStyle = imageStyles.footerColor;
 		ctx.textBaseline=imageStyles.footerBaseline;
 		ctx.textAlign=imageStyles.footerAlign;
-		ctx.font = "bold " + imageStyles.footerFontSize +  "px " + canvasFontFace;
+		ctx.font = "bold " + imageStyles.footerFontSize +  "px " + canvasSansSerifFontFace;
 	
 		if (imageStyles.footerRows == 1) {
 			ctx.fillText("Civil Service LGBT+ Network", imageStyles.footerXY[0], imageStyles.footerXY[1]);
