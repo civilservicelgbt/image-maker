@@ -245,7 +245,7 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 	var imageStyles = {}
 	if (formImageStyles == "squares") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 48, 42, 48, 42);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
@@ -266,7 +266,7 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "circles") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 32, 56, 42);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Check text area size
@@ -289,11 +289,11 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 25, 650, 25, 605, 25, 1055, 25, 1895);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
+		var footerRows = setFooterRows(formImageSize, 2, 2, 2, 1);
 		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "bubbles") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 48, 42, 48, 42);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
@@ -310,11 +310,11 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
+		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 2);
 		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "curves") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 48, 42, 48, 42);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
@@ -335,7 +335,7 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "clouds") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 48, 42, 48, 42);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
@@ -356,7 +356,7 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "waves") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		var fontSize = setFontSize(formImageSize, 42, 32, 36, 28, 48, 42, 48, 42);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
@@ -368,7 +368,7 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		imageStyles.footerBaseline = "top";
 		imageStyles.footerAlign = "left";
 		// Text (x,y) positions
-		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 450, 100, 450, 100, 50, 250, 100, 500);
+		var mainXY = setMainXYCoordinatesAllFormats(formImageSize, 50, 200, 50, 200, 50, 250, 100, 500);
 		imageStyles.mainXY = [Number(mainXY.XY[0]), Number(mainXY.XY[1])]
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 50, 100, 50, 100, 50, 100, 100, 150);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
@@ -379,7 +379,7 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		
 	} else if (formImageStyles == "pride-on-arrows") {
 		// Text font sizes
-		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		var fontSize = setFontSize(formImageSize, 48, 32, 42, 28, 56, 42, 56, 42);
 		imageStyles.mainFontSize = fontSize.main;
 		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
@@ -396,7 +396,7 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		var footerRows = setFooterRows(formImageSize, 2, 2, 2, 2);
+		var footerRows = setFooterRows(formImageSize, 1, 1, 2, 2);
 		imageStyles.footerRows = footerRows.count;
 	}
 
