@@ -58,6 +58,52 @@ function setXYCoordinates(x, y) {
 
 }
 
+function setFontSize(formImageSize, twitterMain = 48, twitterFooter = 32, facebookMain = 48, facebookFooter = 32, instagramGridMain = 48, instagramGridFooter = 32, instagramStoriesMain = 48, instagramStoriesFooter = 32) {
+
+	// -------------------------------------------- //
+	// SET FONT SIZES
+	// This function is to set font sizes for each
+	// image format
+
+	var fontSize = {}
+	if (formImageSize == "twitter") {
+		fontSize.main = twitterMain;
+		fontSize.footer = twitterFooter;
+	} else if (formImageSize == "facebook") {
+		fontSize.main = facebookMain;
+		fontSize.footer = facebookFooter;
+	} else if (formImageSize == "instagram-grid") {
+		fontSize.main = instagramGridMain;
+		fontSize.footer = instagramGridFooter;
+	} else if (formImageSize == "instagram-stories") {
+		fontSize.main = instagramStoriesMain;
+		fontSize.footer = instagramStoriesFooter;
+	}
+
+	return fontSize;
+}
+
+function setFooterRows(formImageSize, twitter = 1, facebook = 1, instagramGrid = 1, instagramStories = 1) {
+
+	// -------------------------------------------- //
+	// SET FOOTER ROWS
+	// This function is to set number of rows
+	// across which to display the wordmark (1 or 2)
+
+	var footerRows = {}
+	if (formImageSize == "twitter") {
+		footerRows.count = twitter;
+	} else if (formImageSize == "facebook") {
+		footerRows.count = facebook;
+	} else if (formImageSize == "instagram-grid") {
+		footerRows.count = instagramGrid;
+	} else if (formImageSize == "instagram-stories") {
+		footerRows.count = instagramStories;
+	}
+
+	return footerRows;
+}
+
 function setMainXYCoordinatesAllFormats(formImageSize, twitterX = 0, twitterY = 0, facebookX = 0, facebookY = 0, instagramGridX = 0, instagramGridY = 0, instagramStoriesX = 0, instagramStoriesY = 0) {
 
 	// -------------------------------------------- //
@@ -105,8 +151,6 @@ function setFooterXYCoordinatesAllFormats(formImageSize, twitterX = 0, twitterY 
 
 	return coordinates;
 }
-
-
 
 function getFormFields(imageSize = true, imageStyles = true, footerStyle = true, mainText = true, mainXY = true) {
 
@@ -199,8 +243,9 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 	var imageStyles = {}
 	if (formImageStyles == "squares") {
 		// Text font sizes
-		imageStyles.mainFontSize = 48;
-		imageStyles.footerFontSize = 32;
+		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
 		imageStyles.mainColor = "#FFFFFF";
 		imageStyles.footerColor = "#FFFFFF";
@@ -215,11 +260,13 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		imageStyles.footerRows = 1;
+		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
+		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "circles") {
 		// Text font sizes
-		imageStyles.mainFontSize = 48;
-		imageStyles.footerFontSize = 32;
+		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
 		// Check text area size
 		textHeight = 0
 		var mainTextMultiline = formMainText.split("***");
@@ -240,11 +287,13 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 25, 650, 25, 605, 25, 1055, 25, 1895);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		imageStyles.footerRows = 2;
+		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
+		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "bubbles") {
 		// Text font sizes
-		imageStyles.mainFontSize = 48;
-		imageStyles.footerFontSize = 32;
+		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
 		imageStyles.mainColor = "#000000";
 		imageStyles.footerColor = "#000000";
@@ -259,11 +308,13 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		imageStyles.footerRows = 1;
+		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
+		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "curves") {
 		// Text font sizes
-		imageStyles.mainFontSize = 48;
-		imageStyles.footerFontSize = 32;
+		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
 		imageStyles.mainColor = "#000000";
 		imageStyles.footerColor = "#000000";
@@ -278,11 +329,13 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		imageStyles.footerRows = 1;
+		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
+		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "clouds") {
 		// Text font sizes
-		imageStyles.mainFontSize = 48;
-		imageStyles.footerFontSize = 32;
+		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
 		imageStyles.mainColor = "#000000";
 		imageStyles.footerColor = "#FFFFFF";
@@ -297,11 +350,13 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 625, 100, 580, 125, 1025, 125, 1850);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		imageStyles.footerRows = 1;
+		var footerRows = setFooterRows(formImageSize, 1, 1, 1, 1);
+		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "waves") {
 		// Text font sizes
-		imageStyles.mainFontSize = 48;
-		imageStyles.footerFontSize = 32;
+		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
 		imageStyles.mainColor = "#000000";
 		imageStyles.footerColor = "#000000";
@@ -316,13 +371,15 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 50, 100, 50, 100, 50, 100, 100, 150);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		imageStyles.footerRows = 2;
+		var footerRows = setFooterRows(formImageSize, 2, 2, 2, 2);
+		imageStyles.footerRows = footerRows.count;
 	} else if (formImageStyles == "pride-on-plain") {
 		
 	} else if (formImageStyles == "pride-on-arrows") {
 		// Text font sizes
-		imageStyles.mainFontSize = 48;
-		imageStyles.footerFontSize = 32;
+		var fontSize = setFontSize(formImageSize, 48, 32, 48, 32, 48, 32, 48, 32);
+		imageStyles.mainFontSize = fontSize.main;
+		imageStyles.footerFontSize = fontSize.footer;
 		// Text colours
 		imageStyles.mainColor = "#FFFFFF";
 		imageStyles.footerColor = "#FFFFFF";
@@ -337,7 +394,8 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 		var footerXY = setFooterXYCoordinatesAllFormats(formImageSize, 100, 575, 100, 530, 125, 955, 125, 1795);
 		imageStyles.footerXY = [Number(footerXY.XY[0]), Number(footerXY.XY[1])];
 		// How many rows for the footer text?
-		imageStyles.footerRows = 2;
+		var footerRows = setFooterRows(formImageSize, 2, 2, 2, 2);
+		imageStyles.footerRows = footerRows.count;
 	}
 
 	return imageStyles;
