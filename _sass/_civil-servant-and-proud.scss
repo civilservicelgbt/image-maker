@@ -1,6 +1,6 @@
 // Page styles
 
-main#civil-servant-and-proud {
+main#pride-on--civil-servant-and-proud {
 
     @supports (display: grid) {
 		display: 					grid;
@@ -118,11 +118,6 @@ main#civil-servant-and-proud {
                 width: 50%;
                 float: left;
                 clear: none;
-            }
-            
-            img {
-                margin: 0 0 10px;
-                border: 1px solid $gray;
             }
 
         }
