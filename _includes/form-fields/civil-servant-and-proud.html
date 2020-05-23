@@ -5,20 +5,38 @@
     <ul id="image-size">
 
         <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-twitter" value="twitter" checked>
+            <input type="radio" onchange="updateImage();" name="image-size" id="size-twitter-timeline" value="twitter-timeline" checked>
             <span class="radio"></span>
-            <label for="size-twitter">
+            <label for="size-twitter-timeline">
                 <span class="label-first-line">Twitter timeline</span>
                 <span class="label-second-line">1200px by 675px</span>
             </label>
         </li>
 
         <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-facebook" value="facebook">
+            <input type="radio" onchange="updateImage();" name="image-size" id="size-twitter-profile-header" value="twitter-profile-header">
             <span class="radio"></span>
-            <label for="size-facebook">
+            <label for="size-twitter-profile-header">
+                <span class="label-first-line">Twitter profile header</span>
+                <span class="label-second-line">1500px by 500px</span>
+            </label>
+        </li>
+
+        <li class="radio-input">
+            <input type="radio" onchange="updateImage();" name="image-size" id="size-facebook-timeline" value="facebook-timeline">
+            <span class="radio"></span>
+            <label for="size-facebook-timeline">
                 <span class="label-first-line">Facebook timeline</span>
                 <span class="label-second-line">1200px by 630px</span>
+            </label>
+        </li>
+
+        <li class="radio-input">
+            <input type="radio" onchange="updateImage();" name="image-size" id="size-facebook-profile-cover" value="facebook-profile-cover">
+            <span class="radio"></span>
+            <label for="size-facebook-profile-cover">
+                <span class="label-first-line">Facebook profile cover</span>
+                <span class="label-second-line">820px by 465px</span>
             </label>
         </li>
 
@@ -41,6 +59,26 @@
         </li>
 
         <li class="radio-input">
+            <input type="radio" onchange="updateImage();" name="image-size" id="size-video-call-background" value="video-call-background">
+            <span class="radio"></span>
+            <label for="size-video-call-background">
+                <span class="label-first-line">Video call background</span>
+                <span class="label-second-line">for Zoom and Microsoft Teams</span>
+                <span class="label-second-line">1920px by 1080px</span>
+            </label>
+        </li>
+
+        <li class="radio-input">
+            <input type="radio" onchange="updateImage();" name="image-size" id="size-profile-picture" value="profile-picture">
+            <span class="radio"></span>
+            <label for="size-profile-picture">
+                <span class="label-first-line">Profile picture</span>
+                <span class="label-second-line">for any social media accounts</span>
+                <span class="label-second-line">1920px by 1080px</span>
+            </label>
+        </li>
+
+        <li class="radio-input">
             <input type="radio" onchange="updateImage();" name="image-size" id="size-poster" value="poster">
             <span class="radio"></span>
             <label for="size-poster">
@@ -53,48 +91,52 @@
 
 </div>
 
+<div id="social-input--text">
+
+    <h2>Text to display</h2>
+    
+    <label for="identityText">
+        <p class="hint">Enter your identity; for example, 'lesbian', 'gay' or 'bisexual'</p>
+    </label>
+    <input onfocusout="updateImage();" id="identityText" name="identityText" type="text" spellcheck="false" placeholder="Enter your identity...">
+
+    <label for="identityText">
+    </label>
+
+</div>
+
 <div id="social-input--image-design">
 
-    <h2>Design</h2>
+    <h2>Colours</h2>
 
-    <ul id="image-design">
+    <ul id="image-colours">
 
         <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-design" id="style-pride-on-arrows" value="pride-on-arrows" checked><span class="radio"></span>
-            <label for="style-pride-on-arrows">
-                <span class="label-first-line">No logo</span>
-                <span class="label-second-line">Magenta background with arrow pattern without logo</span>
+            <input type="radio" onchange="updateImage();" name="image-colours" id="colours-magenta" value="magenta" checked><span class="radio"></span>
+            <label for="colours-magenta">
+                <span class="label-first-line">Magenta</span>
+                <span class="label-second-line">Magenta background with white and yellow text</span>
             </label>
         </li>
 
         <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-design" id="style-pride-on-top-left" value="pride-on-top-left"><span class="radio"></span>
-            <label for="style-pride-on-top-left">
-                <span class="label-first-line">Logo in top left</span>
-                <span class="label-second-line">Magenta background with arrow pattern and PrideON logo in top left corner</span>
+            <input type="radio" onchange="updateImage();" name="image-colours" id="colours-cyan" value="cyan"><span class="radio"></span>
+            <label for="colours-cyan">
+                <span class="label-first-line">Cyan</span>
+                <span class="label-second-line">Cyan background with white and yellow text</span>
             </label>
         </li>
 
         <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-design" id="style-pride-on-bottom-right" value="pride-on-bottom-right"><span class="radio"></span>
-            <label for="style-pride-on-bottom-right">
-                <span class="label-first-line">Logo in bottom right</span>
-                <span class="label-second-line">Magenta background with arrow pattern and PrideON logo in bottom right corner</span>
+            <input type="radio" onchange="updateImage();" name="image-colours" id="colours-yellow" value="yellow"><span class="radio"></span>
+            <label for="colours-yellow">
+                <span class="label-first-line">Yellow</span>
+                <span class="label-second-line">Yellow background with black text</span>
             </label>
         </li>
         
 
     </ul>
-
-</div>
-
-<div id="social-input--text">
-
-    <h2>Text to display</h2>
-    
-    <textarea onfocusout="updateImage();" class="mainText" id="mainText" placeholder="Enter your text to display here." cols="30" rows="5"></textarea>
-
-    <p class="hint">Your text will not automatically wrap to the image dimensons.</p><p class="hint"> You can manually add a line break by inserting three asterisks in a row like this: <code>***</code>.</p>
 
 </div>
 
@@ -116,23 +158,23 @@
 
     <h2>Text position</h2>
     
-    <p>If you need to adjust the horizontal position of the text, adjust this value.</p>
-    <p>These values are absolute values, rather than relative to the text's current position.</p>
+    <p>If you need to adjust the position of the text, adjust this value.</p>
+    <p>These values are relative to the center of the image.</p>
     <ul id="text-position">
         <li class="number-input">
-            <label for="mainTextXPosition">
+            <label for="identityTextXPosition">
                 <span class="label-first-line">Text <em>x</em> position</span>
+                <p class="hint"><code>0</code> is the center of the image. Positive values move right, negative values move left.</p>
             </label>
-            <input onfocusout="updateImage();" id="mainTextXPosition" name="text-position-x" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+            <input onfocusout="updateImage();" id="identityTextXPosition" name="text-position-x" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
 
-            <p class="hint"><code>0</code> is the left edge. Positive values only.</p>
         </li>
         <li class="number-input">
-            <label for="mainTextXPosition">
+            <label for="identityTextXPosition">
                 <span class="label-first-line">Text <em>y</em> position</span>
+                <p class="hint"><code>0</code> is the center of the image. Positive values move down, negative values move up.</p>
             </label>						
-            <input onfocusout="updateImage();" id="mainTextYPosition" name="text-position-y" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
-            <p class="hint"><code>0</code> is the top edge. Positive values only.</p>
+            <input onfocusout="updateImage();" id="identityTextYPosition" name="text-position-y" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
         </li>
     </ul> 
                 
