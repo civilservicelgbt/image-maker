@@ -529,7 +529,7 @@ function generateImage(formFields, imageSize, imageStyles) {
 	ctx.rect(0, 0, canvas.width, canvas.height);
 
 	var imageObj = new Image();
-	imageObj.src = "assets/images/app/" + formFields.imageSize + "/" + formFields.imageDesign + ".png";
+	imageObj.src = "/image-maker/assets/images/default/" + formFields.imageSize + "--" + formFields.imageDesign + ".png";
 
 	imageObj.onload = function() {
 		
