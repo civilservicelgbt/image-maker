@@ -1,124 +1,117 @@
-<div id="social-input--image-size">
+<fieldset id="image-size">
+
+    <legend>Size</legend>
     
-    <h2>Size</h2>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-twitter-timeline" value="twitter" checked>
+        <label for="size-twitter-timeline">Twitter timeline</label>
+        <span class="label-hint">1200px by 675px</span>
+    </div>
 
-    <ul id="image-size">
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-facebook-timeline" value="facebook">
+        
+        <label for="size-facebook-timeline">
+            Facebook timeline
+        </label>
+        <span class="label-hint">1200px by 630px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-twitter" value="twitter" checked>
-            <span class="radio"></span>
-            <label for="size-twitter">
-                <span class="label-first-line">Twitter timeline</span>
-                <span class="label-second-line">1200px by 675px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-grid" value="instagram-grid">
+        
+        <label for="size-instagram-grid">
+            Instagram Grid
+        </label>
+        <span class="label-hint">1080px by 1080px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-facebook" value="facebook">
-            <span class="radio"></span>
-            <label for="size-facebook">
-                <span class="label-first-line">Facebook timeline</span>
-                <span class="label-second-line">1200px by 630px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-stories" value="instagram-stories">
+        
+        <label for="size-instagram-stories">
+            Instagram Stories
+        </label>
+        <span class="label-hint">1080px by 1920px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-grid" value="instagram-grid">
-            <span class="radio"></span>
-            <label for="size-instagram-grid">
-                <span class="label-first-line">Instagram Grid</span>
-                <span class="label-second-line">1080px by 1080px</span>
-            </label>
-        </li>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-stories" value="instagram-stories">
-            <span class="radio"></span>
-            <label for="size-instagram-stories">
-                <span class="label-first-line">Instagram Stories</span>
-                <span class="label-second-line">1080px by 1920px</span>
-            </label>
-        </li>
+</fieldset>
 
-    </ul>
+<fieldset id="image-design">
+    
+    <legend>Design</legend>
 
-</div>
+    <div class="radio-input">		
+            <input type="radio" onchange="updateImage();" name="image-design" id="style-pride-on-arrows" value="pride-on-arrows" checked><span class="radio"></span>		
+            <label for="style-pride-on-arrows">		
+                <span class="label-first-line">No logo</span>		
+                <span class="label-second-line">Magenta background with arrow pattern without logo</span>		
+            </label>		
+        </div>
 
-<div id="social-input--image-design">
-
-    <h2>Design</h2>
-
-    <ul id="image-design">
-
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-design" id="style-pride-on-top-left" value="pride-on-top-left"><span class="radio"></span>
+        <div class="radio-input">
+            <input type="radio" onchange="updateImage();" name="image-design" id="style-pride-on-top-left" value="pride-on-top-left">
             <label for="style-pride-on-top-left">
                 <span class="label-first-line">Logo in top left</span>
                 <span class="label-second-line">Magenta background with arrow pattern and PrideON logo in top left corner</span>
             </label>
-        </li>
+        </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-design" id="style-pride-on-bottom-right" value="pride-on-bottom-right"><span class="radio"></span>
+        <div class="radio-input">
+            <input type="radio" onchange="updateImage();" name="image-design" id="style-pride-on-bottom-right" value="pride-on-bottom-right">
             <label for="style-pride-on-bottom-right">
                 <span class="label-first-line">Logo in bottom right</span>
                 <span class="label-second-line">Magenta background with arrow pattern and PrideON logo in bottom right corner</span>
             </label>
-        </li>
-        
+        </div>
 
-    </ul>
+</fieldset>
 
-</div>
+<fieldset id="social-input--text">
 
-<div id="social-input--text">
-
-    <h2>Text to display</h2>
+    <legend>Text to display</legend>
     
     <textarea onfocusout="updateImage();" class="mainText" id="mainText" placeholder="Enter your text to display here." cols="30" rows="5"></textarea>
 
-    <p class="hint">Your text will not automatically wrap to the image dimensons.</p><p class="hint"> You can manually add a line break by inserting three asterisks in a row like this: <code>***</code>.</p>
+    <span class="label-hint">Your text will not automatically wrap to the image dimensons.</p><p class="hint"> You can manually add a line break by inserting three asterisks in a row like this: <code>***</code>.</span>
 
-</div>
+</fieldset>
 
-<div id="social-input--footer-style">
+<fieldset id="footer-style">
 
-    <h2>Wordmarks and logos</h2>
+    <legend>Wordmarks and logos</legend>
 
-    <p>Toggle the 'Civil Service LGBT+ Network' wordmark.</p>
+    <span class="label-hint">Toggle the 'Civil Service LGBT+ Network' wordmark.</span>
 
-    <ul id="footer-style">
+    <div class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-on" value="on" checked><label for="footer-on">On</label></div>
 
-        <li class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-on" value="on" checked><span class="radio"></span><label for="footer-on">On</label></li>
+    <div class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-off" value="off"><label for="footer-off">Off</label></div>
 
-        <li class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-off" value="off"><span class="radio"></span><label for="footer-off">Off</label></li>
+</fieldset>
 
-    </ul>
-
-</div>
-
-<div id="social-input--text-position">
-
-    <h2>Text position</h2>
+<fieldset id="text-position">
     
-    <p>If you need to adjust the horizontal position of the text, adjust this value.</p>
-    <p>These values are absolute values, rather than relative to the text's current position.</p>
-    <ul id="text-position">
-        <li class="number-input">
-            <label for="mainTextXPosition">
-                <span class="label-first-line">Text <em>x</em> position</span>
-            </label>
-            <input onfocusout="updateImage();" id="mainTextXPosition" name="text-position-x" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+    <legend>Text position</legend>
+    
+    <span class="label-hint">If you need to adjust the horizontal position of the text, adjust this value.</span>
+    <span class="label-hint">These values are absolute values, rather than relative to the text's current position.</span>
 
-            <p class="hint"><code>0</code> is the left edge. Positive values only.</p>
-        </li>
-        <li class="number-input">
-            <label for="mainTextXPosition">
-                <span class="label-first-line">Text <em>y</em> position</span>
-            </label>						
-            <input onfocusout="updateImage();" id="mainTextYPosition" name="text-position-y" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
-            <p class="hint"><code>0</code> is the top edge. Positive values only.</p>
-        </li>
-    </ul> 
-                
-</div>
+    <div class="number-input">
+        <label for="mainTextXPosition">
+            Text <em>x</em> position</span>
+        </label>
+        <span class="label-hint"><code>0</code> is the center of the image. Positive values move right, negative values move left.</span>
+        <input onfocusout="updateImage();" id="mainTextXPosition" name="text-position-x" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+
+    </div>
+
+    <div class="number-input">
+        <label for="mainTextXPosition">
+            Text <em>y</em> position</span>
+        </label>						
+        <span class="label-hint"><code>0</code> is the center of the image. Positive values move down, negative values move up.</span>
+        <input onfocusout="updateImage();" id="mainTextYPosition" name="text-position-y" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+    </div>
+
+</fieldset> 

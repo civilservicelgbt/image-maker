@@ -1,183 +1,170 @@
-<div id="social-input--image-size">
-			
-    <h2>Size</h2>
+<fieldset id="image-size">
 
-    <ul id="image-size">
+    <legend>Size</legend>
+    
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-twitter-timeline" value="twitter-timeline" checked>
+        <label for="size-twitter-timeline">Twitter timeline</label>
+        <span class="label-hint">1200px by 675px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-twitter-timeline" value="twitter-timeline" checked>
-            <span class="radio"></span>
-            <label for="size-twitter-timeline">
-                <span class="label-first-line">Twitter timeline</span>
-                <span class="label-second-line">1200px by 675px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-twitter-profile-header" value="twitter-profile-header">
+        
+        <label for="size-twitter-profile-header">
+            Twitter profile header
+        </label>
+        <span class="label-hint">1500px by 500px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-twitter-profile-header" value="twitter-profile-header">
-            <span class="radio"></span>
-            <label for="size-twitter-profile-header">
-                <span class="label-first-line">Twitter profile header</span>
-                <span class="label-second-line">1500px by 500px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-facebook-timeline" value="facebook-timeline">
+        
+        <label for="size-facebook-timeline">
+            Facebook timeline
+        </label>
+        <span class="label-hint">1200px by 630px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-facebook-timeline" value="facebook-timeline">
-            <span class="radio"></span>
-            <label for="size-facebook-timeline">
-                <span class="label-first-line">Facebook timeline</span>
-                <span class="label-second-line">1200px by 630px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-facebook-profile-cover" value="facebook-profile-cover">
+        
+        <label for="size-facebook-profile-cover">
+            Facebook profile cover
+        </label>
+        <span class="label-hint">820px by 465px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-facebook-profile-cover" value="facebook-profile-cover">
-            <span class="radio"></span>
-            <label for="size-facebook-profile-cover">
-                <span class="label-first-line">Facebook profile cover</span>
-                <span class="label-second-line">820px by 465px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-grid" value="instagram-grid">
+        
+        <label for="size-instagram-grid">
+            Instagram Grid
+        </label>
+        <span class="label-hint">1080px by 1080px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-grid" value="instagram-grid">
-            <span class="radio"></span>
-            <label for="size-instagram-grid">
-                <span class="label-first-line">Instagram Grid</span>
-                <span class="label-second-line">1080px by 1080px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-stories" value="instagram-stories">
+        
+        <label for="size-instagram-stories">
+            Instagram Stories
+        </label>
+        <span class="label-hint">1080px by 1920px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-instagram-stories" value="instagram-stories">
-            <span class="radio"></span>
-            <label for="size-instagram-stories">
-                <span class="label-first-line">Instagram Stories</span>
-                <span class="label-second-line">1080px by 1920px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-video-call-background" value="video-call-background">
+        
+        <label for="size-video-call-background">
+            Video call background
+        </label>
+        <span class="label-hint">for Zoom and Microsoft Teams</span>
+        <span class="label-hint">1920px by 1080px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-video-call-background" value="video-call-background">
-            <span class="radio"></span>
-            <label for="size-video-call-background">
-                <span class="label-first-line">Video call background</span>
-                <span class="label-second-line">for Zoom and Microsoft Teams</span>
-                <span class="label-second-line">1920px by 1080px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-profile-picture" value="profile-picture">
+        
+        <label for="size-profile-picture">
+            Profile picture
+        </label>
+        <span class="label-hint">for any social media accounts</span>
+        <span class="label-hint">1080px by 1080px</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-profile-picture" value="profile-picture">
-            <span class="radio"></span>
-            <label for="size-profile-picture">
-                <span class="label-first-line">Profile picture</span>
-                <span class="label-second-line">for any social media accounts</span>
-                <span class="label-second-line">1920px by 1080px</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-size" id="size-poster" value="poster">
+        
+        <label for="size-poster">
+            Posters
+        </label>
+        <span class="label-hint">A4 and A3</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-size" id="size-poster" value="poster">
-            <span class="radio"></span>
-            <label for="size-poster">
-                <span class="label-first-line">Posters</span>
-                <span class="label-second-line">A4 and A3</span>
-            </label>
-        </li>
+</fieldset>
 
-    </ul>
+<fieldset id="social-input--text">
 
-</div>
-
-<div id="social-input--text">
-
-    <h2>Text to display</h2>
+    <legend>Text to display</legend>
     
     <label for="identityText">
-        <p class="hint">Enter your identity; for example, 'lesbian', 'gay' or 'bisexual'</p>
+        <p class="label-hint">Enter your identity; for example, 'lesbian', 'gay' or 'bisexual'</p>
     </label>
     <input onfocusout="updateImage();" id="identityText" name="identityText" type="text" spellcheck="false" placeholder="Enter your identity...">
 
     <label for="identityText">
     </label>
 
-</div>
+</fieldset>
 
-<div id="social-input--image-design">
 
-    <h2>Colours</h2>
+<fieldset id="image-colours">
 
-    <ul id="image-colours">
+    <legend>Colours</legend>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-colours" id="colours-magenta" value="magenta" checked><span class="radio"></span>
-            <label for="colours-magenta">
-                <span class="label-first-line">Magenta</span>
-                <span class="label-second-line">Magenta background with white and yellow text</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-colours" id="colours-magenta" value="magenta" checked>
+        <label for="colours-magenta">
+            Magenta</span>
+        </label>
+        <span class="label-hint">Magenta background with white and yellow text</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-colours" id="colours-cyan" value="cyan"><span class="radio"></span>
-            <label for="colours-cyan">
-                <span class="label-first-line">Cyan</span>
-                <span class="label-second-line">Cyan background with white and yellow text</span>
-            </label>
-        </li>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-colours" id="colours-cyan" value="cyan">
+        <label for="colours-cyan">
+            Cyan</span>
+        </label>
+        <span class="label-hint">Cyan background with white and yellow text</span>
+    </div>
 
-        <li class="radio-input">
-            <input type="radio" onchange="updateImage();" name="image-colours" id="colours-yellow" value="yellow"><span class="radio"></span>
-            <label for="colours-yellow">
-                <span class="label-first-line">Yellow</span>
-                <span class="label-second-line">Yellow background with black text</span>
-            </label>
-        </li>
-        
-
-    </ul>
-
-</div>
-
-<div id="social-input--footer-style">
-
-    <h2>Wordmarks and logos</h2>
-
-    <p>Toggle the 'Civil Service LGBT+ Network' wordmark.</p>
-
-    <ul id="footer-style">
-
-        <li class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-on" value="on" checked><span class="radio"></span><label for="footer-on">On</label></li>
-
-        <li class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-off" value="off"><span class="radio"></span><label for="footer-off">Off</label></li>
-
-    </ul>
-
-</div>
-
-<div id="social-input--text-position">
-
-    <h2>Text position</h2>
+    <div class="radio-input">
+        <input type="radio" onchange="updateImage();" name="image-colours" id="colours-yellow" value="yellow">
+        <label for="colours-yellow">
+            Yellow</span>
+        </label>
+        <span class="label-hint">Yellow background with black text</span>
+    </div>
     
-    <p>If you need to adjust the position of the text, adjust this value.</p>
-    <p>These values are relative to the center of the image.</p>
-    <ul id="text-position">
-        <li class="number-input">
-            <label for="identityTextXPosition">
-                <span class="label-first-line">Text <em>x</em> position</span>
-                <p class="hint"><code>0</code> is the center of the image. Positive values move right, negative values move left.</p>
-            </label>
-            <input onfocusout="updateImage();" id="identityTextXPosition" name="text-position-x" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
 
-        </li>
-        <li class="number-input">
-            <label for="identityTextXPosition">
-                <span class="label-first-line">Text <em>y</em> position</span>
-                <p class="hint"><code>0</code> is the center of the image. Positive values move down, negative values move up.</p>
-            </label>						
-            <input onfocusout="updateImage();" id="identityTextYPosition" name="text-position-y" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
-        </li>
-    </ul> 
+</fieldset>
+
+<fieldset id="footer-style">
+
+    <legend>Wordmarks and logos</legend>
+
+    <span class="label-hint">Toggle the 'Civil Service LGBT+ Network' wordmark.</span>
+
+    <div class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-on" value="on" checked><label for="footer-on">On</label></div>
+
+    <div class="radio-input"><input type="radio" onchange="updateImage();" name="footer-style" id="footer-off" value="off"><label for="footer-off">Off</label></div>
+
+</fieldset>
+
+<fieldset id="text-position">
+    
+    <legend>Text position</legend>
+    
+    <span class="label-hint">If you need to adjust the horizontal position of the text, adjust this value.</span>
+    <span class="label-hint">These values are absolute values, rather than relative to the text's current position.</span>
+
+    <div class="number-input">
+        <label for="identityTextXPosition">
+            Text <em>x</em> position</span>
+        </label>
+        <span class="label-hint"><code>0</code> is the center of the image. Positive values move right, negative values move left.</span>
+        <input onfocusout="updateImage();" id="identityTextXPosition" name="text-position-x" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+
+    </div>
+
+    <div class="number-input">
+        <label for="identityTextXPosition">
+            Text <em>y</em> position</span>
+        </label>						
+        <span class="label-hint"><code>0</code> is the center of the image. Positive values move down, negative values move up.</span>
+        <input onfocusout="updateImage();" id="identityTextYPosition" name="text-position-y" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false">
+    </div>
+
+</fieldset> 
                 
-</div>

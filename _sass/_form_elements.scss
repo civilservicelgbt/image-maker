@@ -1,5 +1,20 @@
 // Page styles
 
+// FORM ELEMENTS
+
+$touch-target-size:                 44px;
+
+$input-size:                       40px;
+$border-width-form-element:         3px;
+$border-focus-width:                1px;
+$input-border-color:                $black;
+$input-error-color:                 $red;
+$input-focus-color:                 $yellow;
+$input-padding:                     5px;
+
+$radios-size:                       40px;
+$radios-label-padding-left-right:   20px;
+
 main {
 
     div[id^="social-input--"] {
@@ -18,213 +33,229 @@ main {
     
     button,
     a.button {
-        display: inline-block;
+        @extend p;
+        display: block;
         cursor: pointer;
         min-width: 150px;
         width: 100%;
         min-height: 40px;
-        font-size: 19px;
         font-weight: bold;
         vertical-align: middle;
         line-height: 40px;
         background: $magenta;
         color: $white;
-        border: 1px solid $magenta;
-        padding-left: 5px;
+        border: 1px solid $input-border-color;
+        padding: 5px;
         text-align: center;
         margin-bottom: 10px;
+        text-decoration: none;
+        box-sizing: border-box !important;
         
         &:hover {
-            background: $blue;
+            background: $purple;
+            color: $white;
             cursor: pointer;
         }
+
+        &:focus {
+            background: $purple;
+            color: $white !important;
+            outline: 5px solid $input-focus-color;
+            cursor: pointer;
+        }
+
+        &:last-child,
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 
-    ul {
+    legend {
+        @extend h2;
+        text-align: left;
+    }
+
+    span.sub-legend {
+        @extend h3;
         display: block;
+        text-align: left;
+        padding: 36px 0 30px;
+    }
+
+    legend > span.sub-legend {
+        padding-top: 0 !important;
+    }
+
+    .text-input,
+    .radio-input {
+        display: block;
+        position: relative;
+
+        min-height: $input-size;
+
+        @extend p;
         padding: 0;
-        margin: 0;
-        
-        list-style-type: none;
-        
-        li {
-            position: relative;
-            padding: 0;
-            margin: 0 0 15px 0;
-            
-            min-height: 30px;
-            line-height: 30px;
-            vertical-align: middle;
-        }
+
+        margin-bottom: 30px;
+
+        clear: left;
     }
 
-    // Form elements
+    .radio-input {
+        padding-left: $radios-size;
 
-    input[type='text'],
-    input[type='number'],
-    textarea {
-        display: block;
-
-        box-sizing: border-box;
-        
-        width: 100%;
-        
-        margin: 0;
-        padding: 5px;
-        
-        border: 3px solid $black;
-        
-        font-size: $font-size-base;
-
-        &:focus,
-        &:hover {
-            padding: 5px !important;
-            border: 3px solid $magenta !important;
-            outline: none;
+        &:last-child,
+        &:last-of-type {
+            margin-bottom: 0;
         }
-        
-    }
-
-    
-    input[type='checkbox'],
-    input[type='radio'] {
-
-        display: block;
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        
-        width: 30px;
-        height: 30px;
-        margin-right: 25px;
-        
-        z-index: 500;
-        
-        &~label {
-            border-bottom: 2px solid transparent;
-        }
-
-        &:focus,
-        &:hover {
-            &~span.checkbox,
-            &~span.radio {
-                outline: none;
-                border: 3px solid $magenta;
-                &~label {
-                    border-bottom: 2px solid $magenta;
-                }
-            }
-        }
-    }
-    
-    span.checkbox,
-    span.radio {
-        display: inline-block;
-        position: absolute;
-        
-        float: left;
-        
-        height: 30px;
-        width: 30px;
-        
-        margin-right: 25px;
-        
-        border: 3px solid $black;
-
-        &:hover {
-            outline: none;
-            border: 3px solid $magenta;
-        }
-    }
-    
-    span.radio {
-        border-radius: 100%;
-    }
-
-    input:checked ~ span.checkbox {
-        &:after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            
-            width: 24px;
-            height: 24px;
-            
-            line-height: 24px;
-            text-align: center;
-            vertical-align: middle;
-            font-size: 20px;
-            color: $magenta;
-            content: "\2714";
-        }
-    }
-    
-    input:checked ~ span.radio{
-        &:after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            
-            width: 24px;
-            height: 20px;
-            
-            line-height: 24px;
-            text-align: center;
-            vertical-align: middle;
-            font-size: 30px;
-            color: $magenta;
-            content: "\25CF";
-        }
-    }
-    
-    span.radio ~ label,
-    span.checkbox ~ label {
-        margin-left: 50px;
     }
 
     label {
-        display: inline-block;
+        @extend p;
+        display: block;
+        font-weight: 600;
+        padding-bottom: 0;
 
-        span {
-            &.label-first-line,
-            &.label-second-line {
-                display: block;
-            }
-
-            &.label-first-line {
-                font-weight: bold;
-                font-size: $font-size-base * 1.2;
-                line-height: $font-size-base * 1.4;               
-            }
-            &.label-second-line {
-                color: $dark-gray;
-            }
+        &.hidden {
+            @include sr-only;
         }
 
+        &.hidden ~ input {
+            margin: 0;
+        }
+    }
+
+    .label-hint {
+        @extend p;
+        color:  darken($dark-gray, 5%);
+        padding-bottom: 0;
+        display: block;
+    }
+
+    input[type="text"],
+    textarea {
+        @extend p;
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 40px;
         
+        margin-top: 15px;
+        padding: $input-padding;
 
-    }
+        border: $border-width-form-element solid $input-border-color;
+        border-radius: 0;
 
-    li.radio-input label {
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
+        background: $white;
+        color:      $black;
+
+        // Disable inner shadow and remove rounded corners
+        -webkit-appearance: none;
+        appearance: none;
+
+        &:focus {
+            outline: $border-width-form-element solid $input-focus-color;
+            outline-offset: 0;
+            box-shadow: inset 0 0 0 $border-focus-width;
         }
+
+        &:invalid {
+            border: $border-width-form-element solid $input-error-color;
+        }
+
+        &:hover {
+            box-shadow: 0 0 0 3px $magenta;
+        }
+
     }
 
-    li.number-input {
-        margin-bottom: 50px;
+    textarea {
+        resize: vertical;
     }
 
-    p.hint {
-        margin-top: 20px;
-        color: $dark-gray;
+    input[type="radio"] {
+        $input-offset: ($touch-target-size - $radios-size) / 2;
+        cursor: pointer;
+
+        position: absolute;
+
+        z-index: 1;
+        top: $input-offset * -1;
+        left: $input-offset * -1;
+
+        width: $touch-target-size;
+        height: $touch-target-size;
+        margin: 0;
+
+        opacity: 0;
+
+        ~ label {
+            display: inline-block;
+            margin-bottom: 0;
+            padding: 0px $radios-label-padding-left-right;
+            cursor: pointer;
+            // remove 300ms pause on mobile
+            touch-action: manipulation;
+        
+            font-weight:    600;
+
+            &::before {
+                content: "";
+                box-sizing: border-box;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                width: $radios-size;
+                height: $radios-size;
+
+                border: 2px solid $black;
+                border-radius: 50%;
+                background: transparent;
+            }
+
+            &::after {
+                content: "";
+
+                position: absolute;
+                top: 10px;
+                left: 10px;
+
+                width: 0;
+                height: 0;
+
+                border: 10px solid $magenta;
+                border-radius: 50%;
+                opacity: 0;
+                background: $black;
+            }
+        
+        }
+
+        &:focus + label::before {
+            border-width: 4px;
+            box-shadow: 0 0 0 3px $magenta;
+        }
+
+        &:hover + label::before {
+            border-width: 2px;
+            box-shadow: 0 0 0 3px $magenta;
+            background: $light-gray;
+        }
+
+        &:checked + label::after {
+            opacity: 1;
+        }
+
+        ~ .label-hint,  {
+            padding-right: $radios-label-padding-left-right;
+            padding-left: $radios-label-padding-left-right;
+        }
+
+        ~ input[type="text"]  {
+            margin-left: $radios-label-padding-left-right;
+            width: calc(100% - #{$radios-label-padding-left-right});
+        }
+
     }
         
 }
