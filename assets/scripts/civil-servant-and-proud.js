@@ -555,7 +555,7 @@ function generateImage(formFields, imageSize, imageStyles) {
 		drawRestOfImage(ctx, formFields, imageSize, imageStyles);
 
 		// save canvas image as data url (png format by default)
-		var dataURL = canvas.toDataURL('image/png');
+		var dataURL = canvas.toDataURL('image/jpeg');
 	
 		// set canvasImg image src to dataURL
 		// so it can be saved as an image
@@ -570,7 +570,7 @@ function generateImage(formFields, imageSize, imageStyles) {
 
 var outputDownload = document.getElementById('output-download');
 outputDownload.addEventListener('click', function (e) {
-    var dataURL = canvas.toDataURL('image/png');
+    var dataURL = canvas.toDataURL('image/jpeg');
     outputDownload.href = dataURL;
 });
 
