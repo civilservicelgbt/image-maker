@@ -389,7 +389,7 @@ function generateImage(formFields, imageSize, imageStyles) {
 		drawRestOfImage(ctx, formFields, imageStyles);
 
 		// save canvas image as data url (png format by default)
-		var dataURL = canvas.toDataURL('image/jpeg');
+		var dataURL = canvas.toDataURL('image/jpeg', 1.0);
 	
 		// set canvasImg image src to dataURL
 		// so it can be saved as an image
@@ -404,7 +404,10 @@ function generateImage(formFields, imageSize, imageStyles) {
 
 var outputDownload = document.getElementById('output-download');
 outputDownload.addEventListener('click', function (e) {
-    var dataURL = canvas.toDataURL('image/jpeg');
+	var today = new Date();
+	var now = today.getTime();
+	var dataURL = canvas.toDataURL('image/jpeg', 1.0);
+	outputDownload.download = now + " prideon-podcast.jpeg"
     outputDownload.href = dataURL;
 });
 
