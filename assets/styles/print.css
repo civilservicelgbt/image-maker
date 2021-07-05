@@ -342,6 +342,14 @@ summary::after { content: ""; clear: both; display: table; }
 
 details > div.container { width: calc(100% - (15px * 2)); margin: 0 0 0 30px; padding: 0; }
 
+p.external-link a:link, p.external-link a:visited { color: #ffffff; text-decoration: none; }
+
+p.external-link a:hover { color: #2f3590; text-decoration: underline !important; cursor: pointer; }
+
+p.external-link a:focus { color: #0B0C0C !important; background: #ffed00; outline: 3px solid #ffed00; }
+
+p.external-link a:active { color: #ffffff !important; background: #e6007e; outline: 3px solid #e6007e; }
+
 #cookie-notice { display: none; }
 
 #cookie-notice-nojs { display: block; }
@@ -696,7 +704,7 @@ main#networks #page-dept-aside h2.page-aside-title, main#format-networks #page-d
 
 main#networks details > details, main#format-networks details > details { margin-left: 30px; }
 
-main#networks details a.button, main#format-networks details a.button { box-sizing: border-box; margin: 0 7.5px 15px 0; }
+main#networks details a.button, main#networks details p.external-link a, p.external-link main#networks details a, main#format-networks details a.button, main#format-networks details p.external-link a, p.external-link main#format-networks details a { box-sizing: border-box; margin: 0 7.5px 15px 0; }
 
 main#join-us, main#update-profile, main[id^="join-us"] { padding: 45px 0; }
 
