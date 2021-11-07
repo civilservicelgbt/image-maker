@@ -135,6 +135,31 @@ function getImageStyles() {
 
 	switch (imageStyles.background) {
 	  
+	    case "magenta":
+				imageStyles.textColor = "#FFFFFF";
+				imageStyles.footerTextColor = "#FFFFFF";
+				break;
+		
+	    case "cyan":
+				imageStyles.textColor = "#FFFFFF";
+				imageStyles.footerTextColor = "#FFFFFF";
+				break;
+		
+	    case "yellow":
+				imageStyles.textColor = "#0B0C0C";
+				imageStyles.footerTextColor = "#0B0C0C";
+				break;
+		
+	    case "prideon":
+				imageStyles.textColor = "#FFFFFF";
+				imageStyles.footerTextColor = "#FFFFFF";
+				break;
+		
+	    case "podcast":
+				imageStyles.textColor = "#FFFFFF";
+				imageStyles.footerTextColor = "#FFFFFF";
+				break;
+		
 		default:
 			imageStyles.padding = 40;
 			imageStyles.textColor = "#FFFFFF";
@@ -161,6 +186,46 @@ function getImageSize() {
 
 	switch (imageSize.format) {
 	  
+	    case "twitter-timeline":
+				imageSize.width = 1200;
+				imageSize.height = 675;
+				imageSize.padding = 40;
+				imageSize.startTextX = 40;
+				imageSize.startTextY = 80;
+				imageSize.fontSize = 48;
+				imageSize.footerFontSize = 48;
+				break;
+		
+	    case "facebook-timeline":
+				imageSize.width = 1200;
+				imageSize.height = 630;
+				imageSize.padding = 40;
+				imageSize.startTextX = 40;
+				imageSize.startTextY = 80;
+				imageSize.fontSize = 48;
+				imageSize.footerFontSize = 48;
+				break;
+		
+	    case "instagram-grid":
+				imageSize.width = 1080;
+				imageSize.height = 1080;
+				imageSize.padding = 40;
+				imageSize.startTextX = 40;
+				imageSize.startTextY = 120;
+				imageSize.fontSize = 70;
+				imageSize.footerFontSize = 55;
+				break;
+		
+	    case "instagram-stories":
+				imageSize.width = 1080;
+				imageSize.height = 1920;
+				imageSize.padding = 40;
+				imageSize.startTextX = 40;
+				imageSize.startTextY = 240;
+				imageSize.fontSize = 90;
+				imageSize.footerFontSize = 65;
+				break;
+		
 		default:
 			imageSize.width = 1080;
 			imageSize.height = 1080;
