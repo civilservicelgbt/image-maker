@@ -1,0 +1,39 @@
+- title: "Twitter timeline"
+  page: "volunteers"
+  width: 1200
+  height: 675
+  padding: 40
+  startTextX: 40
+  startTextY: 80
+  fontSize: 48
+  footerFontSize: 48
+
+- title: "Facebook timeline"
+  page: "volunteers"
+  width: 1200
+  height: 630
+  padding: 40
+  startTextX: 40
+  startTextY: 80
+  fontSize: 48
+  footerFontSize: 48
+
+- title: "Instagram grid"
+  page: "volunteers"
+  width: 1080
+  height: 1080
+  padding: 40
+  startTextX: 40
+  startTextY: 120
+  fontSize: 70
+  footerFontSize: 55
+
+- title: "Instagram stories"
+  page: "volunteers"
+  width: 1080
+  height: 1920
+  padding: 40
+  startTextX: 40
+  startTextY: 240
+  fontSize: 90
+  footerFontSize: 65
