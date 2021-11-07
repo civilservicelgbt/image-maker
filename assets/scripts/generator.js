@@ -88,15 +88,16 @@ function updateImage() {
 
 function getLines(ctx, text, maxWidth) {
 
-		var lines = [],
-        words = text.replace(/\n\n/g,' ` ').replace(/(\n\s|\s\n)/g,'\r').replace(/\s\s/g,' ').replace('`',' ').replace(/(\r|\n)/g,' '+' ').split(' '),
-        space = ctx.measureText(' ').width,
-        width = 0,
-        line = '',
-        word = '',
-        len = words.length,
-        w = 0,
-        i;
+		var lines = [];
+    var words = text.replace(/\n/g,' ').split(' ');
+    var space = ctx.measureText(' ').width;
+    var width = 0;
+    var line = '';
+    var word = '';
+    var len = words.length;
+    var w = 0;
+    var i;
+
     for (i = 0; i < len; i++) {
       word = words[i];
       w = word ? ctx.measureText(word).width : 0;
@@ -115,6 +116,7 @@ function getLines(ctx, text, maxWidth) {
         lines.push(line.trim());
     }
 
+		console.log(lines)
 		return lines;
 
 }
