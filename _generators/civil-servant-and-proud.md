@@ -1,5 +1,5 @@
 ---
-layout: image-maker/default
+layout: image-maker
 form-fields: civil-servant-and-proud
 styles: "font-family: 'PrideON';"
 title: "Civil servant, LGBT+ & proud"

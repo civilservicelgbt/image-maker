@@ -1,0 +1,29 @@
+---
+layout: skeleton
+---
+
+{% include components/header.html %}
+{% include components/notification-banner.html %}
+{% include layouts/topic-banner.html %}
+
+<div class="width-container">
+
+	{% include components/breadcrumbs.html %}
+	{% include components/back.html %}
+
+	<main class="main-wrapper main-wrapper--auto-spacing" id="main-content" role="main">
+
+		{{ content }}
+
+	</main>
+
+</div>
+
+<div id="toolbar" class="toolbar" style="text-align: center">
+	<div class="width-container">
+		<a href="javascript:void(0)" class="button label-sm button--toolbar" onclick="updateImage(); showDialog('social-preview')">Generate and preview image</a>
+	</div>
+</div>
+
+{% include components/footer.html %}
+

@@ -1,0 +1,110 @@
+---
+layout: default
+
+meta-info: false
+feedback: false
+
+breadcrumbs-override: true
+breadcrumbs:
+- title: "Home"
+  url: "https://www.civilservice.lgbt/"
+- title: "Tools"
+  url: "https://www.civilservice.lgbt/tools"
+---
+
+<article id="{{ page.layout | slugify }}" class="{{ page.form-fields }} article--page">
+
+	<div class="grid-row">
+		{% include layouts/header.html %}
+	</div>
+
+	<div id="page-content">
+		<div id="social-input">
+			<div class="grid-row">
+		    <div class="grid-column-one-half">
+					<hr>
+	        <fieldset id="image-size" class="fieldset" aria-describedby="image-size--legend">
+	            <legend id="image-size--legend">Size</legend>
+	            <div class="radios">
+                <div class="radios--item">
+                  <input class="radios--input" type="radio" name="image-size" id="size-twitter-timeline" value="twitter" checked>
+                  <label class="radios--label" for="size-twitter-timeline">
+                      <span class="label-sm">Twitter timeline</span>
+                      <p class="hint">1200px by 675px</p>
+                  </label>
+                </div>
+                <div class="radios--item">
+                  <input class="radios--input" type="radio" name="image-size" id="size-facebook-timeline" value="facebook">
+                  <label class="radios--label" for="size-facebook-timeline">
+                      <span class="label-sm">Facebook timeline</span>
+                      <p class="hint">1200px by 630px</p>
+                  </label>
+                </div>
+                <div class="radios--item">
+                  <input class="radios--input" type="radio" name="image-size" id="size-instagram-grid" value="instagram-grid">
+                  <label class="radios--label" for="size-instagram-grid">
+                      <span class="label-sm">Instagram Grid</span>
+                      <p class="hint">1080px by 1080px</p>
+                  </label>
+                </div>
+                <div class="radios--item">
+                  <input class="radios--input" type="radio" name="image-size" id="size-instagram-stories" value="instagram-stories">
+                  <label class="radios--label" for="size-instagram-stories">
+                      <span class="label-sm">Instagram Stories</span>
+                      <p class="hint">1080px by 1920px</p>
+                  </label>
+                </div>
+	            </div>
+	        </fieldset>
+					<hr>
+	        <fieldset id="image-design" aria-describedby="image-design--legend">
+	            <legend id="image-design--legend">Design</legend>
+	            <div class="radios">
+									{% assign first-radio = true %}
+	                {% for generator in site.data.generators %}
+	                {% if generator.page contains page.generator %}
+	                <div class="radios--item">
+	                    <input  class="radios--input" type="radio" name="image-design" id="{{ generator.title | slugify }}" value="{{ generator.title | slugify }}" {% if first-radio == true %}checked{% endif %}>
+	                    <label class="radios--label" for="{{ generator.title | slugify }}">
+	                        {{ generator.title }}
+	                        {% if generator.hint %}
+	                        <p class="hint">{{ generator.hint }}</p>
+	                        {% endif %}
+	                    </label>
+	                </div>
+									{% assign first-radio = false %}
+	                {% endif %}
+	                {% endfor %}
+	            </div>
+	        </fieldset>
+		    </div>
+		    <div class="grid-column-one-half">
+					<hr>
+	        <fieldset id="social-input--text">
+            <legend>Text to display</legend>
+            <p class="hint">Your text will automatically wrap to the image width. Use the <code>Enter</code> key to insert line breaks.</p>
+            <textarea class="mainText" id="mainText" placeholder="Enter your text to display here." cols="30" rows="15" spellcheck="true"></textarea>
+	        </fieldset>
+		    </div>
+			</div>
+		</div>
+
+		<dialog class="dialog" id="social-preview">
+			<header class="dialog--header">
+				<h2 class="heading-md dialog--title">Image preview</h2>
+			</header>
+			<section class="dialog--content dialog--content--center">
+			<img id="canvas-img" alt="Right click to save me!" style="margin: 0; max-height: 50vh; max-width: 100%; width: auto;">
+			</section>
+			<footer class="dialog--actions">
+				<a href="javascript:void(0)" class="button button--dialog" id="output-download" download>Download image</a>
+				<button onclick="closeDialog('social-preview')" class="button button--secondary button--dialog button--close">Close preview</button>
+			</footer>
+		</dialog>
+	</div>
+
+</article>
+
+<canvas id="canvas" style="display: none;"></canvas>
+
+<script type="text/javascript" src="{{ site.url | append: site.baseurl | append: '/assets/scripts/' | append: page.generator | append: '.js' }}"></script>

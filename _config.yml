@@ -60,21 +60,49 @@ social-media-accounts:
 ###################
 # Header settings #
 ###################
-# This title will show in the main menu bar
-header-menu--title--display-text: "Civil Service LGBT+"
-# If this theme is being used for a subdomain (i.e. blog.civilservice.lgbt) then set
-# - `header-menu--subdomain-title` to 'true'
-# - `header-menu--subdomain-title--display-text` to any string value (i.e. "Image maker")
-header-menu--subdomain-title: true
-header-menu--subdomain-title--display-text: "Image Maker"
-
-header-menu--links--hidden: true
+header-menu--links--hidden: false
 # Header menu links
 header-menu--links:
   - display-text: "Home"
     alt-text: "Visit the home page"
     url: "/"
     hidden: true
+  - display-text: "News"
+    alt-text: "Visit the News page"
+    url: "/news"
+    hidden: false
+  - display-text: "Events"
+    alt-text: "Visit the Events page"
+    url: "/events"
+    hidden: false
+  - display-text: "Topics"
+    alt-text: "Visit the Topics page"
+    url: "/topics"
+    hidden: false
+  - display-text: "Publications"
+    alt-text: "Visit the Publications page"
+    url: "/publications"
+    hidden: false
+  - display-text: "Consultations"
+    alt-text: "Visit the Consultations page"
+    url: "/consultations"
+    hidden: false
+  - display-text: "Networks"
+    alt-text: "Visit the Networks page"
+    url: "/networks"
+    hidden: false
+  - display-text: "Our team"
+    alt-text: "See who we are"
+    url: "/team"
+    hidden: false
+  - display-text: "About"
+    alt-text: "Learn more about us"
+    url: "/about"
+    hidden: false
+  - display-text: "Join us"
+    alt-text: "Visit the membership registration page"
+    url: "/join-us"
+    hidden: false
 
 ###################
 # Footer settings #
@@ -147,12 +175,12 @@ collections:
     permalink: /:path/
     defaults:
       values:
-        layout: image-maker/default
+        layout: image-maker
 
 ##################
 # Build settings #
 ##################
-remote_theme: civilservicelgbt/theme
+remote_theme: civilservicelgbt/magenta
 permalink: pretty
 markdown: kramdown
 future: false

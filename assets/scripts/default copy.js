@@ -4,7 +4,6 @@
 
 // -------------------------------------------- //
 // GLOBAL VALUES
-
 var canvasFontFace = "Helvetica, Arial";
 
 function setUp() {
@@ -14,7 +13,7 @@ function setUp() {
 	// This runs on page load, and populates the default values for the
 	// image maker. These styles are overriden when UI elements are
 	// interacted with
-	
+
 	var formFields = getFormFields();
 	var imageSize = setImageSizes(formFields.imageSize);
 	var imageStyles = setimageStyles(formFields.imageSize, formFields.imageDesign, formFields.mainText);
@@ -29,9 +28,9 @@ function updateImage() {
 
 	// -------------------------------------------- //
 	// UPDATE IMAGE
-	// This function updates the canvas using whatever the 
+	// This function updates the canvas using whatever the
 	// latest variables are
-	
+
 	var formFields = getFormFields();
 	console.log( "Image format: " + formFields.imageSize + ". Style: " + formFields.imageDesign + ". Footer (on/off): " + formFields.footerStyle + ". Text (x,y): " + formFields.mainXY[0] + "px, " + formFields.mainXY[1] + "px" );
 
@@ -110,7 +109,7 @@ function setMainXYCoordinatesAllFormats(formImageSize, twitterX = 0, twitterY = 
 
 	// -------------------------------------------- //
 	// SET DEFAULT XY COORDINATES
-	// This function can be used to set XY coordinates 
+	// This function can be used to set XY coordinates
 	// for all image formats at the same time
 
 	var coordinates = {}
@@ -137,7 +136,7 @@ function setFooterXYCoordinatesAllFormats(formImageSize, twitterX = 0, twitterY 
 
 	// -------------------------------------------- //
 	// SET DEFAULT XY COORDINATES
-	// This function can be used to set XY coordinates 
+	// This function can be used to set XY coordinates
 	// for all image formats at the same time
 
 	var coordinates = {}
@@ -149,7 +148,7 @@ function setFooterXYCoordinatesAllFormats(formImageSize, twitterX = 0, twitterY 
 		coordinates.XY = [instagramGridX, instagramGridY];
 	} else if (formImageSize == "instagram-stories") {
 		coordinates.XY = [instagramStoriesX, instagramStoriesY];
-	} 
+	}
 
 	return coordinates;
 }
@@ -233,7 +232,7 @@ function setImageSizes(formImageSize) {
 	}
 
 	return imageSize;
-	
+
 }
 
 function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", formMainText) {
@@ -462,11 +461,11 @@ function setimageStyles(formImageSize = "twitter", formImageStyles = "squares", 
 	}
 
 	return imageStyles;
-	
+
 }
 
 function drawRestOfImage(ctx, formFields, imageStyles) {
-	
+
 	// Form main text, set text baseline
 	ctx.textBaseline=imageStyles.mainBaseline;
 	ctx.textAlign=imageStyles.mainAlign;
@@ -491,7 +490,7 @@ function drawRestOfImage(ctx, formFields, imageStyles) {
 		ctx.textBaseline=imageStyles.footerBaseline;
 		ctx.textAlign=imageStyles.footerAlign;
 		ctx.font = "bold " + imageStyles.footerFontSize +  "px " + canvasFontFace;
-	
+
 		if (imageStyles.footerRows == 1) {
 			ctx.fillText("Civil Service LGBT+ Network", imageStyles.footerXY[0], imageStyles.footerXY[1]);
 		} else if (imageStyles.footerRows == 2) {
@@ -532,7 +531,7 @@ function generateImage(formFields, imageSize, imageStyles) {
 	imageObj.src = "/image-maker/assets/images/default/" + formFields.imageSize + "--" + formFields.imageDesign + ".png";
 
 	imageObj.onload = function() {
-		
+
 		// -------------------------------------------- //
 		// DRAW BACKGROUND
 		ctx.drawImage(imageObj, 0, 0, canvas.width, canvas.height);
@@ -543,14 +542,14 @@ function generateImage(formFields, imageSize, imageStyles) {
 
 		// save canvas image as data url (png format by default)
 		var dataURL = canvas.toDataURL('image/jpeg', 1.0);
-	
+
 		// set canvasImg image src to dataURL
 		// so it can be saved as an image
 		previewImage = document.getElementById('canvas-img');
 		previewImage.src = dataURL;
-	
+
 		console.log("Done!");
-	
+
 	}
 
 }
