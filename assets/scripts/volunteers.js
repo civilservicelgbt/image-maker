@@ -1,3 +1,6 @@
+---
+---
+
 function showDialog(x) {
 	// show the dialog
 	var dialog = document.getElementById(x);
@@ -12,9 +15,7 @@ function closeDialog(x) {
 
 function updateImage() {
 
-	// get form fields
-
-	// set image size
+	// set image size and dimensions
 	var imageSize = getImageSize();
 	// set image styles
 	var imageStyles = getImageStyles();
@@ -24,25 +25,24 @@ function updateImage() {
 
 	canvas.width = imageSize.width;
 	canvas.height = imageSize.height;
-	canvas.padding = 40;
-	canvas.maxwidth = canvas.width - (3 * canvas.padding);
-	canvas.fontsize = 48;
+	canvas.padding = imageSize.padding;
+	canvas.maxWidth = canvas.width - (3 * canvas.padding);
+	canvas.fontSize = imageSize.fontSize;
+	canvas.footerFontsize = imageSize.footerFontSize;
 	canvas.text = document.getElementById("mainText").value;
-	canvas.startTextX = canvas.padding;
-	canvas.startTextY = canvas.padding;
-	canvas.lineheight = canvas.fontsize * 1.2;
+	canvas.startTextX = imageSize.startTextX;
+	canvas.startTextY = imageSize.startTextY;
+	canvas.lineHeight = canvas.fontSize * 1.2;
 	canvas.style.width = canvas.width + "px";
 	canvas.style.height = canvas.height + "px";
 
 	var ctx = canvas.getContext('2d');
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
-	ctx.fillStyle = '#ffffff';
 	ctx.rect(0, 0, canvas.width, canvas.height);
 
 	var imageObj = new Image();
 	imageObj.src = "/image-maker/assets/images/" + imageSize.format + "--" + imageStyles.background + ".png";
-	// imageObj.src = "/image-maker/assets/images/default/" + formFields.imageSize + "--" + formFields.imageDesign + ".png";
 
 	imageObj.onload = function() {
 
@@ -55,32 +55,27 @@ function updateImage() {
 		// Form main text, set text baseline
 		ctx.textBaseline="top";
 		ctx.textAlign="left";
-		ctx.font = "normal 48px Helvetica, Arial";
-		ctx.fillStyle = "#FFFFFF";
+		ctx.font = "normal " + imageSize.fontSize + "px Helvetica, Arial";
+		ctx.fillStyle = imageStyles.textColor;
 
-		console.log("Successfully set text styles...");
-
-		var lines = getLines(ctx, canvas.text, canvas.maxwidth);
+		var lines = getLines(ctx, canvas.text, canvas.maxWidth);
 
 		for (var i = 0; i < lines.length; i++) {
 			line = lines[i]
 			ctx.fillText(line, canvas.startTextX, canvas.startTextY);
-			canvas.startTextY += canvas.lineheight;
+			canvas.startTextY += canvas.lineHeight;
+			console.info("Line "+ i + ": " + line);
 		}
 
-		console.log("Successfully printed text...");
-
-		ctx.fillStyle = "#FFFFFF";
 		ctx.textBaseline = "top";
 		ctx.textAlign = "left";
-		ctx.font = "bold 48px Helvetica, Arial";
+		ctx.font = "bold " + imageSize.footerFontSize + "px Helvetica, Arial";
+		ctx.fillStyle = imageStyles.footerTextColor;
 
-		var startFooterTextY = canvas.height - canvas.padding - canvas.fontsize;
+		var startFooterTextY = canvas.height - canvas.padding - imageSize.footerFontSize;
 
-		ctx.fillText("Civil Service", canvas.padding, startFooterTextY - canvas.lineheight);
+		ctx.fillText("Civil Service", canvas.padding, startFooterTextY - (imageSize.footerFontSize * 1.1));
 		ctx.fillText("LGBT+ Network.", canvas.padding, startFooterTextY);
-
-		console.log("Successfully printed the footer...");
 
 		// save canvas image as data url (png format by default)
 		var dataURL = canvas.toDataURL('image/jpeg', 1.0);
@@ -89,8 +84,6 @@ function updateImage() {
 		// so it can be saved as an image
 		previewImage = document.getElementById('canvas-img');
 		previewImage.src = dataURL;
-
-		console.log("Done!");
 
 	}
 
@@ -113,9 +106,7 @@ function getLines(ctx, text, maxWidth) {
       if (w) {
           width = width + space + w;
       }
-      if (w > maxWidth) {
-          return [];
-      } else if (w && width < maxWidth) {
+      if (w && width < maxWidth) {
           line += word + ' ';
       } else {
           !i || lines.push(line !== '' ? line.trim() : ' ');
@@ -124,7 +115,7 @@ function getLines(ctx, text, maxWidth) {
       }
     }
     if (len !== i || line !== '') {
-        lines.push(line);
+        lines.push(line.trim());
     }
 
 		return lines;
@@ -145,6 +136,20 @@ function getImageStyles() {
 		}
 	}
 
+	switch (imageStyles.background) {
+	  {% for style in site.data.styles %}
+	    case "{{ style.title | slugify }}":
+				imageStyles.textColor = "{{ style.textColor }}";
+				imageStyles.footerTextColor = "{{ style.footerTextColor }}";
+				break;
+		{% endfor %}
+		default:
+			imageStyles.padding = 40;
+			imageStyles.textColor = "#FFFFFF";
+			imageStyles.footerTextColor = "#FFFFFF";
+
+	}
+
 	return imageStyles;
 
 }
@@ -162,21 +167,26 @@ function getImageSize() {
 		}
 	}
 
-	if (imageSize.format == "twitter") {
-		imageSize.width = 1200;
-		imageSize.height = 675;
-	} else if (imageSize.format == "facebook") {
-		imageSize.width = 1200;
-		imageSize.height = 630;
-	} else if (imageSize.format == "instagram-grid") {
-		imageSize.width = 1080;
-		imageSize.height = 1080;
-	} else if (imageSize.format == "instagram-stories") {
-		imageSize.width = 1080;
-		imageSize.height = 1920;
-	} else {
-		imageSize.width = 1080;
-		imageSize.height = 1080;
+	switch (imageSize.format) {
+	  {% for size in site.data.sizes %}
+	    case "{{ size.title | slugify }}":
+				imageSize.width = {{ size.width }};
+				imageSize.height = {{ size.height }};
+				imageSize.padding = {{ size.padding }};
+				imageSize.startTextX = {{ size.startTextX }};
+				imageSize.startTextY = {{ size.startTextY }};
+				imageSize.fontSize = {{ size.fontSize }};
+				imageSize.footerFontSize = {{ size.footerFontSize }};
+				break;
+		{% endfor %}
+		default:
+			imageSize.width = 1080;
+			imageSize.height = 1080;
+			imageSize.startTextX = 40;
+			imageSize.startTextY = 40;
+			imageSize.fontSize = 48;
+			imageSize.footerFontSize = 48;
+
 	}
 
 	return imageSize
@@ -190,4 +200,5 @@ outputDownload.addEventListener('click', function (e) {
 	var dataURL = canvas.toDataURL('image/jpeg', 1.0);
 	outputDownload.download = now + " cslgbt.jpeg"
   outputDownload.href = dataURL;
+	console.log("✅ Done")
 });

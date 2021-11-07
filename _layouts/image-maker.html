@@ -26,34 +26,19 @@ breadcrumbs:
 	        <fieldset id="image-size" class="fieldset" aria-describedby="image-size--legend">
 	            <legend id="image-size--legend">Size</legend>
 	            <div class="radios">
+								{% assign first-radio = true %}
+                {% for size in site.data.sizes %}
+                {% if size.page contains page.generator %}
                 <div class="radios--item">
-                  <input class="radios--input" type="radio" name="image-size" id="size-twitter-timeline" value="twitter" checked>
-                  <label class="radios--label" for="size-twitter-timeline">
-                      <span class="label-sm">Twitter timeline</span>
-                      <p class="hint">1200px by 675px</p>
-                  </label>
+                    <input  class="radios--input" type="radio" name="image-size" id="{{ size.title | slugify }}" value="{{ size.title | slugify }}" {% if first-radio == true %}checked{% endif %}>
+                    <label class="label-sm radios--label" for="{{ size.title | slugify }}">
+                        {{ size.title }}
+                        <p class="hint">{{ size.width }}px by {{ size.height }}px</p>
+                    </label>
                 </div>
-                <div class="radios--item">
-                  <input class="radios--input" type="radio" name="image-size" id="size-facebook-timeline" value="facebook">
-                  <label class="radios--label" for="size-facebook-timeline">
-                      <span class="label-sm">Facebook timeline</span>
-                      <p class="hint">1200px by 630px</p>
-                  </label>
-                </div>
-                <div class="radios--item">
-                  <input class="radios--input" type="radio" name="image-size" id="size-instagram-grid" value="instagram-grid">
-                  <label class="radios--label" for="size-instagram-grid">
-                      <span class="label-sm">Instagram Grid</span>
-                      <p class="hint">1080px by 1080px</p>
-                  </label>
-                </div>
-                <div class="radios--item">
-                  <input class="radios--input" type="radio" name="image-size" id="size-instagram-stories" value="instagram-stories">
-                  <label class="radios--label" for="size-instagram-stories">
-                      <span class="label-sm">Instagram Stories</span>
-                      <p class="hint">1080px by 1920px</p>
-                  </label>
-                </div>
+								{% assign first-radio = false %}
+                {% endif %}
+                {% endfor %}
 	            </div>
 	        </fieldset>
 					<hr>
@@ -61,14 +46,14 @@ breadcrumbs:
 	            <legend id="image-design--legend">Design</legend>
 	            <div class="radios">
 									{% assign first-radio = true %}
-	                {% for generator in site.data.generators %}
-	                {% if generator.page contains page.generator %}
+	                {% for style in site.data.styles %}
+	                {% if style.page contains page.generator %}
 	                <div class="radios--item">
-	                    <input  class="radios--input" type="radio" name="image-design" id="{{ generator.title | slugify }}" value="{{ generator.title | slugify }}" {% if first-radio == true %}checked{% endif %}>
-	                    <label class="radios--label" for="{{ generator.title | slugify }}">
-	                        {{ generator.title }}
-	                        {% if generator.hint %}
-	                        <p class="hint">{{ generator.hint }}</p>
+	                    <input  class="radios--input" type="radio" name="image-design" id="{{ style.title | slugify }}" value="{{ style.title | slugify }}" {% if first-radio == true %}checked{% endif %}>
+	                    <label class="radios--label" for="{{ style.title | slugify }}">
+	                        {{ style.title }}
+	                        {% if style.hint %}
+	                        <p class="hint">{{ style.hint }}</p>
 	                        {% endif %}
 	                    </label>
 	                </div>
@@ -83,7 +68,7 @@ breadcrumbs:
 	        <fieldset id="social-input--text">
             <legend>Text to display</legend>
             <p class="hint">Your text will automatically wrap to the image width. Use the <code>Enter</code> key to insert line breaks.</p>
-            <textarea class="mainText" id="mainText" placeholder="Enter your text to display here." cols="30" rows="15" spellcheck="true"></textarea>
+            <textarea class="mainText" id="mainText" placeholder="Enter your text to display here." cols="30" rows="15" spellcheck="true">We help to create a more diverse, inclusive and equal place to work for civil servants with minority sexual orientations, gender identities and expressions, and sex characteristics.</textarea>
 	        </fieldset>
 		    </div>
 			</div>
@@ -94,7 +79,7 @@ breadcrumbs:
 				<h2 class="heading-md dialog--title">Image preview</h2>
 			</header>
 			<section class="dialog--content dialog--content--center">
-			<img id="canvas-img" alt="Right click to save me!" style="margin: 0; max-height: 50vh; max-width: 100%; width: auto;">
+			<img id="canvas-img" alt="Right click to save me!" style="margin: 0; max-height: 50vh; max-width: 100%; width: auto; border: 1px solid #DEE0E2;">
 			</section>
 			<footer class="dialog--actions">
 				<a href="javascript:void(0)" class="button button--dialog" id="output-download" download>Download image</a>
