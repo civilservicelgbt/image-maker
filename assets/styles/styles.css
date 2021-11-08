@@ -348,6 +348,32 @@ kbd, code { color: #0B0C0C; font-family: "Helvetica Neue", "Helvetica", Arial, s
 
 @media only screen and (max-width: 641px) { .button-group--bordered .button:last-of-type { margin-bottom: 0; } }
 
+.button--toggle { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; box-sizing: border-box; position: relative; width: 100%; margin-top: 0; margin-right: 0; margin-left: 0; margin-bottom: 22px; padding: 7px 10px 6px; border: 3px solid transparent; border-radius: 0; color: #ffffff; background-color: #AD005F; box-shadow: 0 2px 0 black; text-align: center; vertical-align: top; cursor: pointer; -webkit-appearance: none; }
+
+@media only screen and (min-width: 641px) { .button--toggle { font-size: 19px; line-height: 25px; } }
+
+@media only print { .button--toggle { font-size: 14pt; line-height: 1.15; } }
+
+@media only screen and (min-width: 641px) { .button--toggle { margin-bottom: 32px; } }
+
+@media only screen and (min-width: 641px) { .button--toggle { width: auto; } }
+
+.button--toggle:link, .button--toggle:visited, .button--toggle:active, .button--toggle:hover { color: #ffffff; text-decoration: none; }
+
+.button--toggle::-moz-focus-inner { padding: 0; border: 0; }
+
+.button--toggle:hover { background-color: #7a0043; }
+
+.button--toggle:active { top: 2px; }
+
+.button--toggle:focus { border-color: #FFED00; outline: 3px solid transparent; box-shadow: inset 0 0 0 1px #FFED00; }
+
+.button--toggle:focus:not(:active):not(:hover) { border-color: #FFED00; color: #0B0C0C; background-color: #FFED00; box-shadow: 0 2px 0 #0B0C0C; }
+
+.button--toggle:before { content: ""; display: block; position: absolute; top: -3px; right: -3px; bottom: -5px; left: -3px; background: transparent; }
+
+.button--toggle:active:before { top: -5px; }
+
 .button-group--clearfix:after { content: ""; display: block; clear: both; }
 
 .button--align-right { float: right; }
@@ -1054,9 +1080,19 @@ body { margin: 0; background-color: #ffffff; }
 
 .page--header:after { content: ""; display: block; clear: both; }
 
-@media only print { .page--header { margin: 0; padding: 0 1cm; width: 100%; height: 99%; page-break-after: always; background: #AD005F; } }
+@media only print { .page--header { margin: 0; padding: 0 1cm; width: 100%; height: 99%; page-break-before: always; page-break-after: always; background: #AD005F; box-sizing: border-box; } }
 
-@media only print { .page--caption { padding: 40% 0 0; color: #ffffff; font-weight: bold; } .page--caption:before { position: absolute; display: block; top: 70px; content: "Civil Service \A LGBT+ Network"; white-space: pre; color: #fff2f9 !important; } }
+.page--divider:after { content: ""; display: block; clear: both; }
+
+@media only print { .page--divider { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 700; font-size: 36px; line-height: 38px; margin: 0; padding: 7cm 1cm 0; width: 100%; height: 99%; page-break-before: always; page-break-after: always; background: #fff2f9; color: #AD005F; box-sizing: border-box; } }
+
+@media only print { .page--divider { font-size: 36pt; line-height: 1.15; } }
+
+@media only print { .page--divider:before { position: relative; display: block; top: -5cm; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 700; font-size: 24px; line-height: 25px; content: "Civil Service \A LGBT+ Network."; white-space: pre; color: #AD005F !important; } }
+
+@media only print { .page--divider:before { font-size: 24pt; line-height: 1.05; } }
+
+@media only print { .page--caption { padding: 7cm 0 0; color: #ffffff; font-weight: bold; } .page--caption:before { position: absolute; display: block; top: 2cm; content: "Civil Service \A LGBT+ Network."; white-space: pre; color: #fff2f9 !important; } }
 
 .page--heading { margin-top: 15px; margin-bottom: 25px; max-width: 80%; }
 
