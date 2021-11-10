@@ -186,7 +186,7 @@ a:focus { color: #0B0C0C; }
 
 .link--no-visited-state:focus { color: #0B0C0C; }
 
-hr { margin-top: 20px; margin-bottom: 20px; border: 0; border-bottom: 3px solid #BFC1C3; }
+hr { margin-top: 20px; margin-bottom: 20px; border: 0; border-bottom: 3px solid #DEE0E2; }
 
 @media only screen and (min-width: 641px) { hr { margin-top: 30px; } }
 
@@ -198,7 +198,7 @@ pre { display: inline-block; box-sizing: border-box; width: 100%; max-width: 100
 
 @media only screen and (min-width: 641px) { pre { padding: 10px; } }
 
-kbd, code { color: #0B0C0C; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 14px; line-height: 16px; margin-top: 0; margin-bottom: 15px; font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+kbd, code { color: #AD005F; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 14px; line-height: 16px; margin-top: 0; margin-bottom: 15px; font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 @media only screen and (min-width: 641px) { kbd, code { font-size: 16px; line-height: 20px; } }
 
@@ -244,7 +244,7 @@ kbd, code { color: #0B0C0C; font-family: "Helvetica Neue", "Helvetica", Arial, s
 
 @media only print { .breadcrumbs { font-size: 14pt; line-height: 1.2; } }
 
-@media only screen and (min-width: 641px) { .breadcrumbs { padding-bottom: 10px; border-bottom: 1px solid #BFC1C3; } }
+@media only screen and (min-width: 641px) { .breadcrumbs { padding-bottom: 10px; border-bottom: 1px solid #DEE0E2; } }
 
 @media only print { .breadcrumbs { display: none; } }
 
@@ -342,7 +342,7 @@ kbd, code { color: #0B0C0C; font-family: "Helvetica Neue", "Helvetica", Arial, s
 
 .button--volunteer { width: 100%; }
 
-.button-group--bordered { border-top: 5px solid #DEE0E2; padding: 25px 0; }
+.button-group--bordered { border-top: 5px solid #DEE0E2; padding: 25px 0 0; }
 
 @media only screen and (min-width: 641px) { .button-group--bordered .button { margin-bottom: 0; } }
 
@@ -488,7 +488,7 @@ details > summary:active { background: transparent; outline: 3px solid #FFED00; 
 
 details > summary:active:after { color: #0B0C0C; }
 
-details { padding-top: 10px; padding-bottom: 10px; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; display: block; border-top: 1px solid #BFC1C3; border-bottom: 1px solid #BFC1C3; }
+details { padding-top: 10px; padding-bottom: 10px; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; display: block; border-top: 1px solid #DEE0E2; border-bottom: 1px solid #DEE0E2; }
 
 @media only screen and (min-width: 641px) { details { padding-top: 10px; } }
 
@@ -882,13 +882,13 @@ table { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-f
 
 @media only screen and (min-width: 641px) { table { margin-bottom: 30px; } }
 
-thead { border-bottom: 2px solid #BFC1C3; }
+thead { border-bottom: 2px solid #DEE0E2; }
 
-tr { border-bottom: 1px solid #BFC1C3; }
+tr { border-bottom: 1px solid #DEE0E2; }
 
 tr:last-child { border-bottom: none; }
 
-tfoot { border-top: 2px solid #BFC1C3; }
+tfoot { border-top: 2px solid #DEE0E2; }
 
 th { padding: 10px 20px 10px 0; text-align: left; vertical-align: top; }
 
@@ -974,7 +974,7 @@ textarea:focus { outline: 3px solid #FFED00; outline-offset: 0; box-shadow: inse
 
 .textarea--error:focus { border-color: #0B0C0C; }
 
-blockquote.warning-text { position: relative; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; padding: 10px 10px 10px 0; margin-top: 20px; margin-bottom: 20px; clear: both; border: none; background: #fff2f9; }
+blockquote.warning-text { position: relative; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; padding: 10px 20px 10px 0; margin-top: 20px; margin-bottom: 20px; clear: both; border: none; background: #fff2f9; }
 
 @media only screen and (min-width: 641px) { blockquote.warning-text { font-size: 19px; line-height: 25px; } }
 
@@ -1400,15 +1400,15 @@ details.objective p { max-width: 60ch; }
 
 .admin--link-block--guidance { background: #e3f7ff; border-top: 5px solid #009FE3; }
 
-.admin--step-by-step { padding-bottom: 70px; }
+.admin--step-by-step, .admin--select { padding-bottom: 70px; }
 
-.admin--step-by-step:after { content: ""; display: block; clear: both; }
+.admin--step-by-step:after, .admin--select:after { content: ""; display: block; clear: both; }
 
-.admin--step-by-step h2 { border-top: 5px solid #e6007e; padding-top: 25px; }
+.admin--step-by-step h2, .admin--select h2 { border-top: 5px solid #e6007e; padding-top: 25px; }
 
 .fieldset-row { padding-bottom: 25px; margin-bottom: 25px; }
 
-.fieldset--post-github { padding: 25px 0; border-top: 5px solid #DEE0E2; }
+.fieldset--post-github, .fieldset--email-notify { padding: 25px 0 0; border-top: 5px solid #DEE0E2; }
 
 .folder-navigation { background: #ffffff; border: 3px solid #fff2f9; }
 
