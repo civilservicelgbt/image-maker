@@ -730,6 +730,58 @@ blockquote > :first-child { margin-top: 0; }
 
 blockquote > :only-child, blockquote > :last-child { margin-bottom: 0; }
 
+blockquote.document-box { position: relative; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; padding: 10px 20px 10px 0; margin-top: 20px; margin-bottom: 20px; clear: both; border: none; background: #fff2f9; }
+
+@media only screen and (min-width: 641px) { blockquote.document-box { font-size: 19px; line-height: 25px; } }
+
+@media only print { blockquote.document-box { font-size: 14pt; line-height: 1.15; } }
+
+@media only screen and (min-width: 641px) { blockquote.document-box { margin-top: 30px; } }
+
+@media only screen and (min-width: 641px) { blockquote.document-box { margin-bottom: 30px; } }
+
+blockquote.document-box > :first-child { margin-top: 10px; }
+
+blockquote.document-box > :only-child, blockquote.document-box > :last-child { margin-bottom: 10px; }
+
+@media only screen and (min-width: 641px) { blockquote.document-box > * { padding-left: 80px; } }
+
+@media only screen and (max-width: 641px) { blockquote.document-box > * { padding-left: 70px; } }
+
+blockquote.document-box:before { content: ""; position: relative; top: 10px; left: 15px; float: left; display: block; padding: 10px; border-radius: 100%; background: #e6007e; background-position: center; background-repeat: no-repeat; color: #ffffff; background-image: url("data:image/svg+xml,%3Csvg xmlns:xl='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' xmlns:dc='http://purl.org/dc/elements/1.1/' version='1.1' viewBox='0 0 30 30' width='30' height='30'%3E%3Cdefs/%3E%3Cmetadata%3E Produced by OmniGraffle 7.19.1%5Cn2021-11-13 18:31:56 +0000%3C/metadata%3E%3Cg id='doc' stroke-dasharray='none' fill='none' stroke='none' stroke-opacity='1' fill-opacity='1'%3E%3Ctitle%3Edoc%3C/title%3E%3Cg id='doc_Layer_1'%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cg id='Graphic_5'%3E%3Cpath d='M 5 1 L 17 1 L 17 10 L 17 1 L 25 10 L 17 10 L 25 10 L 25 29 L 5 29 Z' fill='none'/%3E%3Cpath d='M 5 1 L 17 1 L 17 10 L 17 1 L 25 10 L 17 10 L 25 10 L 25 29 L 5 29 Z' stroke='%23FFED00' stroke-linecap='butt' stroke-linejoin='round' stroke-width='2'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+
+@media only screen and (min-width: 641px) { blockquote.document-box:before { background-size: 30px 30px; width: 30px; height: 30px; } }
+
+@media only screen and (max-width: 641px) { blockquote.document-box:before { background-size: 20px 20px; width: 20px; height: 20px; } }
+
+blockquote.document-box:after { content: ""; display: block; clear: both; }
+
+blockquote.warning-text { position: relative; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; padding: 10px 20px 10px 0; margin-top: 20px; margin-bottom: 20px; clear: both; border: none; background: #fff2f9; }
+
+@media only screen and (min-width: 641px) { blockquote.warning-text { font-size: 19px; line-height: 25px; } }
+
+@media only print { blockquote.warning-text { font-size: 14pt; line-height: 1.15; } }
+
+@media only screen and (min-width: 641px) { blockquote.warning-text { margin-top: 30px; } }
+
+@media only screen and (min-width: 641px) { blockquote.warning-text { margin-bottom: 30px; } }
+
+blockquote.warning-text > :first-child { margin-top: 10px; }
+
+blockquote.warning-text > :only-child, blockquote.warning-text > :last-child { margin-bottom: 10px; }
+
+@media only screen and (min-width: 641px) { blockquote.warning-text > * { padding-left: 80px; } }
+
+@media only screen and (max-width: 641px) { blockquote.warning-text > * { padding-left: 70px; } }
+
+blockquote.warning-text:before { content: ""; position: relative; top: 10px; left: 15px; float: left; display: block; padding: 10px; border-radius: 100%; background: #e6007e; background-position: center; background-repeat: no-repeat; color: #ffffff; background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg xmlns:xl='http://www.w3.org/1999/xlink' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='12 0 6 30' width='6' height='30'%3E%3Cdefs/%3E%3Cmetadata%3E Produced by OmniGraffle 7.18.5%5Cn2021-09-29 21:16:20 +0000%3C/metadata%3E%3Cg id='Canvas' stroke='none' fill='none' fill-opacity='1' stroke-opacity='1' stroke-dasharray='none'%3E%3Ctitle%3E!%3C/title%3E%3Cg id='Canvas_Layer_1'%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cg id='Graphic_4'%3E%3Cpath d='M 12 0 L 12 21 L 18 21 L 18 0 Z M 12 24 L 12 30 L 18 30 L 18 24 Z' fill='%23ffed00'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A"); }
+
+@media only screen and (min-width: 641px) { blockquote.warning-text:before { background-size: 30px 30px; width: 30px; height: 30px; } }
+
+@media only screen and (max-width: 641px) { blockquote.warning-text:before { background-size: 20px 20px; width: 20px; height: 20px; } }
+
+blockquote.warning-text:after { content: ""; display: block; clear: both; }
+
 .label-xl { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 700; font-size: 32px; line-height: 35px; margin-bottom: 15px; }
 
 @media only screen and (min-width: 641px) { .label-xl { font-size: 48px; line-height: 52px; } }
@@ -748,11 +800,11 @@ blockquote > :only-child, blockquote > :last-child { margin-bottom: 0; }
 
 @media only print { .label-md { font-size: 18pt; line-height: 1.15; } }
 
-.label-sm, .date-input--label { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 700; font-size: 16px; line-height: 20px; }
+.label-sm, blockquote.document-box p:first-child, .date-input--label { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 700; font-size: 16px; line-height: 20px; }
 
-@media only screen and (min-width: 641px) { .label-sm, .date-input--label { font-size: 19px; line-height: 25px; } }
+@media only screen and (min-width: 641px) { .label-sm, blockquote.document-box p:first-child, .date-input--label { font-size: 19px; line-height: 25px; } }
 
-@media only print { .label-sm, .date-input--label { font-size: 14pt; line-height: 1.15; } }
+@media only print { .label-sm, blockquote.document-box p:first-child, .date-input--label { font-size: 14pt; line-height: 1.15; } }
 
 label, .label { display: block; }
 
@@ -973,32 +1025,6 @@ textarea:focus { outline: 3px solid #FFED00; outline-offset: 0; box-shadow: inse
 .textarea--error { border: 3px solid #E30613; }
 
 .textarea--error:focus { border-color: #0B0C0C; }
-
-blockquote.warning-text { position: relative; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; padding: 10px 20px 10px 0; margin-top: 20px; margin-bottom: 20px; clear: both; border: none; background: #fff2f9; }
-
-@media only screen and (min-width: 641px) { blockquote.warning-text { font-size: 19px; line-height: 25px; } }
-
-@media only print { blockquote.warning-text { font-size: 14pt; line-height: 1.15; } }
-
-@media only screen and (min-width: 641px) { blockquote.warning-text { margin-top: 30px; } }
-
-@media only screen and (min-width: 641px) { blockquote.warning-text { margin-bottom: 30px; } }
-
-blockquote.warning-text > :first-child { margin-top: 10px; }
-
-blockquote.warning-text > :only-child, blockquote.warning-text > :last-child { margin-bottom: 10px; }
-
-@media only screen and (min-width: 641px) { blockquote.warning-text > * { padding-left: 80px; } }
-
-@media only screen and (max-width: 641px) { blockquote.warning-text > * { padding-left: 70px; } }
-
-blockquote.warning-text:before { content: ""; position: relative; top: 10px; left: 15px; float: left; display: block; padding: 10px; border-radius: 100%; background: #e6007e; background-position: center; background-repeat: no-repeat; color: #ffffff; background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg xmlns:xl='http://www.w3.org/1999/xlink' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='12 0 6 30' width='6' height='30'%3E%3Cdefs/%3E%3Cmetadata%3E Produced by OmniGraffle 7.18.5%5Cn2021-09-29 21:16:20 +0000%3C/metadata%3E%3Cg id='Canvas' stroke='none' fill='none' fill-opacity='1' stroke-opacity='1' stroke-dasharray='none'%3E%3Ctitle%3E!%3C/title%3E%3Cg id='Canvas_Layer_1'%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cg id='Graphic_4'%3E%3Cpath d='M 12 0 L 12 21 L 18 21 L 18 0 Z M 12 24 L 12 30 L 18 30 L 18 24 Z' fill='%23ffed00'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A"); }
-
-@media only screen and (min-width: 641px) { blockquote.warning-text:before { background-size: 30px 30px; width: 30px; height: 30px; } }
-
-@media only screen and (max-width: 641px) { blockquote.warning-text:before { background-size: 20px 20px; width: 20px; height: 20px; } }
-
-blockquote.warning-text:after { content: ""; display: block; clear: both; }
 
 html { background-color: #fff2f9; text-size-adjust: 100%; }
 
