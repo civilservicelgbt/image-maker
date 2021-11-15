@@ -310,6 +310,12 @@ kbd, code { color: #AD005F; font-family: "Helvetica Neue", "Helvetica", Arial, s
 
 .button--disabled:active, button[disabled="disabled"]:active, button[disabled]:active { top: 0; box-shadow: 0 2px 0 black; }
 
+.button--primary { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 18px; line-height: 20px; }
+
+@media only screen and (min-width: 641px) { .button--primary { font-size: 24px; line-height: 30px; } }
+
+@media only print { .button--primary { font-size: 18pt; line-height: 1.15; } }
+
 .button--secondary { background-color: #DEE0E2; box-shadow: 0 2px 0 #727a82; }
 
 .button--secondary, .button--secondary:link, .button--secondary:visited, .button--secondary:active, .button--secondary:hover { color: #0B0C0C; }
@@ -531,6 +537,8 @@ details + h1, details + h2, details + h3, details + h4 { margin-top: 40px; }
 p + details, ul + details { margin-top: 20px; }
 
 @media only screen and (min-width: 641px) { p + details, ul + details { margin-top: 30px; } }
+
+details.spacing-bottom { margin-bottom: 60px; }
 
 fieldset, .fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
 
@@ -836,7 +844,7 @@ h1 > label, h2 > label, h3 > label, h4 > label { margin: 0; }
 
 @media only print { .notification-banner { display: none; } }
 
-.panel { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; box-sizing: border-box; margin-bottom: 15px; padding: 35px; border: 5px solid transparent; text-align: left; background: #007EB4; color: #ffffff; }
+.panel { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; box-sizing: border-box; margin-bottom: 30px; padding: 70px 35px; border: 5px solid transparent; text-align: left; background: #007EB4; color: #ffffff; }
 
 @media only screen and (min-width: 641px) { .panel { font-size: 19px; line-height: 25px; } }
 
