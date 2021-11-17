@@ -91,9 +91,10 @@ form.addEventListener("submit", (e)=>{
 			window.location.href = "https://www.civilservice.lgbt/membership/success";
     })
     .catch(
-			err=>console.error(err)
-			window.location.href = "https://www.civilservice.lgbt/membership/error";
-		); //promise based
+	err=>{
+		console.error(err)
+		window.location.href = "https://www.civilservice.lgbt/membership/error";
+	}); //promise based
 });
 
 //populating input data
