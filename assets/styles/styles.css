@@ -436,7 +436,7 @@ kbd, code { color: #AD005F; font-family: "Helvetica Neue", "Helvetica", Arial, s
 
 @media (hover: none), (pointer: coarse) { .checkboxes--small .checkboxes--item:hover .checkboxes--input:not(:disabled) + .checkboxes--label:before { box-shadow: initial; } .checkboxes--small .checkboxes--item:hover .checkboxes--input:focus + .checkboxes--label:before { box-shadow: 0 0 0 3px #FFED00; } }
 
-.toolbar { position: sticky; z-index: 999999; bottom: 0; top: auto; left: 0; right: 0; padding: 15px 0; background: #fff2f9; }
+.toolbar { position: sticky; z-index: 999999; bottom: 0; top: auto; left: 0; right: 0; padding: 15px 0; background: #fff6fa; }
 
 .toolbar:after { content: ""; display: block; clear: both; }
 
@@ -456,7 +456,7 @@ kbd, code { color: #AD005F; font-family: "Helvetica Neue", "Helvetica", Arial, s
 
 .dialog--content--center { text-align: center; }
 
-.dialog--header, .dialog--actions { background: #fff2f9; }
+.dialog--header, .dialog--actions { background: #fff6fa; }
 
 .date-input { font-size: 0; }
 
@@ -562,7 +562,7 @@ h1 > legend, h2 > legend, h3 > legend, h4 > legend { margin: 0; font-size: inher
 
 .form-row { margin-bottom: 10px; }
 
-footer, .footer { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 14px; line-height: 16px; padding-top: 25px; padding-bottom: 15px; color: #0B0C0C; background: #fff2f9; }
+footer, .footer { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 14px; line-height: 16px; padding-top: 25px; padding-bottom: 15px; color: #0B0C0C; background: #fff6fa; }
 
 @media only screen and (min-width: 641px) { footer, .footer { font-size: 16px; line-height: 20px; } }
 
@@ -608,7 +608,7 @@ footer a:focus, .footer a:focus, .footer--link:focus { box-sizing: border-box; c
 
 .footer--list-item:last-child { margin-bottom: 0; }
 
-.feedback { margin-bottom: 15px; padding: 10px; background: #fff2f9; }
+.feedback { margin-bottom: 15px; padding: 10px; background: #fff6fa; }
 
 @media only print { .feedback { display: none; } }
 
@@ -738,7 +738,7 @@ blockquote > :first-child { margin-top: 0; }
 
 blockquote > :only-child, blockquote > :last-child { margin-bottom: 0; }
 
-blockquote.document-box { position: relative; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; padding: 10px 20px 10px 0; margin-top: 20px; margin-bottom: 20px; clear: both; border: none; background: #fff2f9; }
+blockquote.document-box { position: relative; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; padding: 10px 20px 10px 0; margin-top: 20px; margin-bottom: 20px; clear: both; border: none; background: #fff6fa; }
 
 @media only screen and (min-width: 641px) { blockquote.document-box { font-size: 19px; line-height: 25px; } }
 
@@ -764,7 +764,7 @@ blockquote.document-box:before { content: ""; position: relative; top: 10px; lef
 
 blockquote.document-box:after { content: ""; display: block; clear: both; }
 
-blockquote.warning-text { position: relative; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; padding: 10px 20px 10px 0; margin-top: 20px; margin-bottom: 20px; clear: both; border: none; background: #fff2f9; }
+blockquote.warning-text { position: relative; font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 400; font-size: 16px; line-height: 20px; color: #0B0C0C; padding: 10px 20px 10px 0; margin-top: 20px; margin-bottom: 20px; clear: both; border: none; background: #fff6fa; }
 
 @media only screen and (min-width: 641px) { blockquote.warning-text { font-size: 19px; line-height: 25px; } }
 
@@ -1034,7 +1034,7 @@ textarea:focus { outline: 3px solid #FFED00; outline-offset: 0; box-shadow: inse
 
 .textarea--error:focus { border-color: #0B0C0C; }
 
-html { background-color: #fff2f9; text-size-adjust: 100%; }
+html { background-color: #fff6fa; text-size-adjust: 100%; }
 
 @media only screen { html { overflow-y: scroll; } }
 
@@ -1118,7 +1118,7 @@ body { margin: 0; background-color: #ffffff; }
 
 .page--divider:after { content: ""; display: block; clear: both; }
 
-@media only print { .page--divider { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 700; font-size: 36px; line-height: 38px; margin: 0; padding: 7cm 1cm 0; width: 100%; height: 99%; page-break-before: always; page-break-after: always; background: #fff2f9; color: #AD005F; box-sizing: border-box; } }
+@media only print { .page--divider { font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 700; font-size: 36px; line-height: 38px; margin: 0; padding: 7cm 1cm 0; width: 100%; height: 99%; page-break-before: always; page-break-after: always; background: #fff6fa; color: #AD005F; box-sizing: border-box; } }
 
 @media only print { .page--divider { font-size: 36pt; line-height: 1.15; } }
 
@@ -1126,7 +1126,7 @@ body { margin: 0; background-color: #ffffff; }
 
 @media only print { .page--divider:before { font-size: 24pt; line-height: 1.05; } }
 
-@media only print { .page--caption { padding: 7cm 0 0; color: #ffffff; font-weight: bold; } .page--caption:before { position: absolute; display: block; top: 2cm; content: "Civil Service \A LGBT+ Network."; white-space: pre; color: #fff2f9 !important; } }
+@media only print { .page--caption { padding: 7cm 0 0; color: #ffffff; font-weight: bold; } .page--caption:before { position: absolute; display: block; top: 2cm; content: "Civil Service \A LGBT+ Network."; white-space: pre; color: #fff6fa !important; } }
 
 .page--heading { margin-top: 15px; margin-bottom: 25px; max-width: 80%; }
 
@@ -1186,7 +1186,7 @@ body { margin: 0; background-color: #ffffff; }
 
 .article--event .page--content { border-top: none !important; }
 
-.section--event-details { padding: 25px; background: #ffe6f4; }
+.section--event-details { padding: 25px; background: #fff6fa; }
 
 .section--event-details p:last-child { margin-bottom: 0; }
 
@@ -1194,13 +1194,13 @@ body { margin: 0; background-color: #ffffff; }
 
 .event--event-details--value:last-child { margin-bottom: 0; }
 
-.section--event-registration { padding: 25px; background: #ffffff; border: 3px solid #fff2f9; }
+.section--event-registration { padding: 25px; background: #ffffff; border: 3px solid #fff6fa; }
 
 .section--event-registration p:last-child { margin-bottom: 0; }
 
-.event--aside { padding-top: 25px; border-top: 3px solid #DEE0E2; }
+.event--aside { margin: 30px 0; padding: 20px 20px 10px; background: #fff6fa; }
 
-.event--aside blockquote:first-of-type { margin-top: 0; }
+.event--aside details:last-of-type { border-bottom: 0; }
 
 .article--consultation .page--content { border-top: none !important; }
 
@@ -1212,7 +1212,7 @@ body { margin: 0; background-color: #ffffff; }
 
 .consultation--consultation-details--value:last-child { margin-bottom: 0; }
 
-.section--consultation-start-buttons { padding: 25px; background: #ffffff; border: 3px solid #fff2f9; }
+.section--consultation-start-buttons { padding: 25px; background: #ffffff; border: 3px solid #fff6fa; }
 
 .section--consultation-start-buttons p:last-child { margin-bottom: 0; }
 
@@ -1288,7 +1288,7 @@ details.objective p { max-width: 60ch; }
 
 .objective-summary progress.complete::-moz-progress-bar { background-color: #00853E; }
 
-.business-plan--team { background: #fff2f9; padding: 15px 15px 5px; margin: 15px 0; }
+.business-plan--team { background: #fff6fa; padding: 15px 15px 5px; margin: 15px 0; }
 
 @media only print { .business-plan--team { page-break-before: always; page-break-inside: avoid; } }
 
@@ -1338,7 +1338,7 @@ details.objective p { max-width: 60ch; }
 
 .section--home .social-links ul li .social-links--handle { float: left; clear: none; padding: 0; margin-bottom: 0; height: 40px; line-height: 40px; vertical-align: middle; }
 
-.home--join-us { padding: 25px; margin-bottom: 70px; background: #fff2f9; }
+.home--join-us { padding: 25px; margin-bottom: 70px; background: #fff6fa; }
 
 .home--social { padding-top: 15px; border-top: 5px solid #DEE0E2; }
 
@@ -1428,7 +1428,7 @@ details.objective p { max-width: 60ch; }
 
 .volunteer--details--value:last-child { margin-bottom: 0; }
 
-.admin--link-block { padding: 25px 15px 5px 15px; background: #fff2f9; margin-bottom: 25px; border-top: 5px solid #e6007e; }
+.admin--link-block { padding: 25px 15px 5px 15px; background: #fff6fa; margin-bottom: 25px; border-top: 5px solid #e6007e; }
 
 @media only screen and (min-width: 641px) { .admin--link-block { padding: 25px 25px 0 25px; aspect-ratio: 1.75/1; } }
 
@@ -1444,15 +1444,15 @@ details.objective p { max-width: 60ch; }
 
 .fieldset--post-github, .fieldset--email-notify { padding: 25px 0 0; border-top: 5px solid #DEE0E2; }
 
-.folder-navigation { background: #ffffff; border: 3px solid #fff2f9; }
+.folder-navigation { background: #ffffff; border: 3px solid #fff6fa; }
 
 .folder-navigation .radios { padding: 15px; }
 
-.folder-name { z-index: 999999; position: sticky; position: -webkit-sticky; top: 0; background: #fff2f9; padding: 15px; }
+.folder-name { z-index: 999999; position: sticky; position: -webkit-sticky; top: 0; background: #fff6fa; padding: 15px; }
 
 .folder-name .button { margin-bottom: 0; }
 
-.revealed-input { padding: 15px; margin-left: 60px; margin-bottom: 25px; background: #fff2f9; }
+.revealed-input { padding: 15px; margin-left: 60px; margin-bottom: 25px; background: #fff6fa; }
 
 .collection--left-nav--navigation, .collection--left-nav--article { padding: 25px 0; margin-bottom: 0 !important; }
 
