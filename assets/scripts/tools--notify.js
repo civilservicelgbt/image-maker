@@ -4,7 +4,6 @@
 	var mailingListService = document.getElementById("mailing-identifier-service").value;
 	var mailingListTab = document.getElementById("mailing-identifier-tab").value;
 
-
 	function getCurrentDate() {
 
 		const months = {
@@ -32,18 +31,42 @@
 		return date;
 	}
 
+function getRadios(el) {
+	var radios = document.getElementsByName(el);
+	for (var i = 0, length = radios.length; i < length; i++) {
+		if (radios[i].checked) {
+		  // do whatever you want with the checked radio
+		  value = radios[i].value;
+		  // only one radio can be logically checked, don't check the rest
+		  break;
+		}
+	}
+	return value;
+}
+
 // GENERATE THE NOTIFY CONTENT
 
 	function updateContent(type) {
 
 		var posts = document.getElementsByName("notify-posts");
-
+		if (type == "regions") {
+			var regionName = getRadios("region-select");
+		}
+		if (type == "topics") {
+			var topicName = getRadios("topic-select");
+		}
 		var date = getCurrentDate();
 
 		// Create variables to hold the outputs
 		if (type == "events") {
 			var emailTemplateName = "Events: " + date;
 			var emailSubject = "Upcoming events: " + date;
+		} else if (type == "regions") {
+			var emailTemplateName = "Regional update (" + regionName + "): " + date;
+			var emailSubject = "Regional update for " + regionName + ": " + date;
+		} else if (type == "topics") {
+			var emailTemplateName = "Topic update (" + topicName + "): " + date;
+			var emailSubject = "Topic update for " + topicName + ": " + date;
 		} else {
 			var emailTemplateName = "Updates: " + date;
 			var emailSubject = "Latest news and updates: " + date;
@@ -59,6 +82,14 @@
 			emailMessageContent += "# Upcoming events\n\n";
 			emailMessageContent += date + "\n\n";
 			emailMessageContent += "Upcoming events and activities from the Civil Service LGBT+ Network.\n\n";
+		} else if (type == "regions") {
+			emailMessageContent += "# Region update: " + regionName + "\n\n";
+			emailMessageContent += date + "\n\n";
+			emailMessageContent += "Updates for " + regionName + " from the Civil Service LGBT+ Network.\n\n";
+		} else if (type == "topics") {
+			emailMessageContent += "# Topic update: " + topicName + "\n\n";
+			emailMessageContent += date + "\n\n";
+			emailMessageContent += "Updates relating to " + topicName + " from the Civil Service LGBT+ Network.\n\n";
 		} else {
 			emailMessageContent += "# Latest updates\n\n";
 			emailMessageContent += date + "\n\n";
@@ -68,6 +99,9 @@
 		console.group("Selected posts")
 		for (i = 0; i < posts.length; i++) {
 			var postTitle = posts[i].dataset.title;
+			var postCategory = posts[i].dataset.category;
+			if (postCategory == "") { var postCategory = "none" }
+			var postCollection = posts[i].dataset.collection;
 			var postExcerpt = posts[i].dataset.excerpt;
 			var postDate = posts[i].dataset.date;
 			var postURL = posts[i].dataset.url;
@@ -75,9 +109,11 @@
 		  if (posts[i].checked) {
 				if (type == "events") {
 					console.groupCollapsed(postTitle);
+						console.info("Collection: " + postCollection);
 						console.info("Event excerpt: " + postExcerpt);
 			    	console.info("Event date: " + postDate);
 						console.info("Event URL: " + postURL);
+						console.info("Category: " + postCategory);
 					console.groupEnd();
 
 					emailMessageContent += "---\n";
@@ -85,11 +121,45 @@
 					emailMessageContent += "Taking place on " + postDate + "\n\n";
 					emailMessageContent += postExcerpt + "\n\n";
 					emailMessageContent += "Find out more and register to attend at: \n" + postURL + "\n\n";
+				} else if (type == "regions" || type == "topics") {
+
+					if (postCollection == "events") {
+						console.groupCollapsed(postTitle);
+							console.info("Collection: " + postCollection);
+							console.info("Event excerpt: " + postExcerpt);
+				    	console.info("Event date: " + postDate);
+							console.info("Event URL: " + postURL);
+							console.info("Category: " + postCategory);
+						console.groupEnd();
+
+						emailMessageContent += "---\n";
+						emailMessageContent += "# " + postTitle + "\n";
+						emailMessageContent += "Taking place on " + postDate + "\n\n";
+						emailMessageContent += postExcerpt + "\n\n";
+						emailMessageContent += "Find out more and register to attend at: \n" + postURL + "\n\n";
+					} else {
+						console.groupCollapsed(postTitle);
+							console.info("Collection: " + postCollection);
+							console.info("Post excerpt: " + postExcerpt);
+				    	console.info("Post date: " + postDate);
+							console.info("Post URL: " + postURL);
+							console.info("Category: " + postCategory);
+						console.groupEnd();
+
+						emailMessageContent += "---\n";
+						emailMessageContent += "# " + postTitle + "\n";
+						emailMessageContent += postExcerpt + "\n\n";
+						emailMessageContent += "Read more at: \n" + postURL + "\n\n";
+						emailMessageContent += "Published " + postDate + "\n\n";
+					}
+
 				} else {
 					console.groupCollapsed(postTitle);
+						console.info("Collection: " + postCollection);
 						console.info("Post excerpt: " + postExcerpt);
 			    	console.info("Post date: " + postDate);
 						console.info("Post URL: " + postURL);
+						console.info("Category: " + postCategory);
 					console.groupEnd();
 
 					emailMessageContent += "---\n";
