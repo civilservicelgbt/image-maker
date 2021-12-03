@@ -340,7 +340,7 @@
 			if (postTopic.value == "") {
 				jekyllPost += "# category: \n# - " + postTopic.value + "\n";
 			} else {
-				jekyllPost += "category: \n- " + postTopic.value + "\n";
+				jekyllPost += "category: " + postTopic.value + "\n";
 			}
 
 			if (postImage.value == "") {
@@ -351,9 +351,9 @@
 		}
 
 		if (postType == "team") {
-			
+
 			jekyllPost += "name: \"" + postTitle.value + "\"\n";
-			
+
 			if (postTeamMemberRole.value == "") {
 				jekyllPost += "# ";
 			}
