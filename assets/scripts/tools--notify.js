@@ -173,7 +173,7 @@ function getRadios(el) {
 		console.groupEnd()
 
 		emailMessageContent += "---\n"
-		emailMessageContent += "If you no longer want to recieve our email alerts, please email us at updates@alerts.civilservice.lgbt or just reply to this email."
+		emailMessageContent += "If you no longer want to receive our email alerts, please email us at updates@alerts.civilservice.lgbt or just reply to this email."
 
 		inputTemplateName.value = emailTemplateName;
 		inputSubject.value = emailSubject;
