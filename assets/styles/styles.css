@@ -1268,6 +1268,8 @@ details.objective li span.status.complete > .sr-only, details.objective li span.
 
 details.objective p { max-width: 60ch; }
 
+details.objective p.milestone-with-details { margin-bottom: 0; }
+
 @media only print { .objective-summary { page-break-inside: avoid; } }
 
 .objective-summary progress { display: block; position: relative; width: 100%; }
